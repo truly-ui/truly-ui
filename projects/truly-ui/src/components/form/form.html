@@ -1,0 +1,40 @@
+<div class="formBox" (keydown)="handleKeysForm($event)">
+  <div class="loading" *ngIf="isLoading">
+    <div class="loader">
+      <tl-loader></tl-loader>
+    </div>
+  </div>
+    <div class="formContent" #content [style.padding]="padding">
+      <form novalidate #form="ngForm">
+        <ng-content></ng-content>
+      </form>
+    </div>
+    <div [ngClass]="{'clearfix': mode !== 'inline'}"></div>
+    <div [ngClass]="{'forFooter': mode !== 'inline'}">
+        <div class="controls" *ngIf="mode !== 'inline'">
+          <tl-button  #buttonFormCancel
+                       [text]="textCancel"
+                       [width]="'120px'"
+                       mdResult="MRCANCEL"
+                       [color]="'basic'"
+                       [style.padding-right]="'5px'"
+                       [shortcut]="cancelShortcut"
+                       [formResult]="formResult"
+                       [iconAddonBefore]="'fas fa-times'">
+            </tl-button>
+            <tl-button #buttonFormOk
+                       [text]="textConfirm"
+                       [isLoading]="isLoading"
+                       mdResult="MROK"
+                       (click)="onSubmitForm()"
+                       (keydown.enter)="onSubmitForm()"
+                       [width]="'120px'"
+                       [color]="'success'"
+                       [shortcut]="submitShortcut"
+                       [disabled]="isLoading ? true : formGroup ? !formGroup.valid : !form.valid"
+                       [formResult]="formResult"
+                       [iconAddonBefore]="'fas fa-check'">
+            </tl-button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="router-outlet">
+  <app-showcase-header name="Stopwatch" module="StopwatchModule">
+    It is a digital countdown timer.
+  </app-showcase-header>
+  <div class="showcase">
+    <div class="row">
+      <div class="col-md-12">
+        <app-showcase-card [title]="'Showcase'" [icon]="'fas fa-desktop'">
+          <app-card>
+            <div class="col-md-12">
+              <h6>Basic</h6>
+              <tl-stopwatch [width]="'240px'" [height]="'45px'" [resetOnStop]="true" [initialTime]="'00:59:58'" (returnTime)="onStop($event)"></tl-stopwatch>
+              <br>
+              <button (click)="stopWatchService.start()" class="btn-demo">Start</button>
+              <button (click)="stopWatchService.stop()" class="btn-demo">Stop</button>
+              <button (click)="stopWatchService.reset()" class="btn-demo">Reset</button>
+              <br>
+              <div class="spacer"></div>
+              <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-stopwatch [width]="'240px'" [height]="'45px'" [resetOnStop]="true" [initialTime]="'00:59:58'" (returnTime)="onStop($event)"></tl-stopwatch>
+<button (click)="stopWatchService.start()">Start</button>
+<button (click)="stopWatchService.stop()">Stop</button>
+<button (click)="stopWatchService.reset()">Reset</button>
+              </textarea>
+            </div>
+          </app-card>
+        </app-showcase-card>
+      </div>
+    </div>
+    <app-showcase-card [title]="'Properties'" [icon]="'fas fa-clipboard-list'">
+      <app-card>
+        <app-showcase-table-properties [data]="dataTableProperties"></app-showcase-table-properties>
+      </app-card>
+    </app-showcase-card>
+    <app-showcase-card [title]="'Events'" [icon]="'ion ion-ios-radio'">
+      <app-card>
+        <app-showcase-table-events [data]="dataEvents"></app-showcase-table-events>
+      </app-card>
+    </app-showcase-card>
+  </div>
+</div>

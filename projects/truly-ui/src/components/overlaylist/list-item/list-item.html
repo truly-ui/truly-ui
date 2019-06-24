@@ -1,0 +1,11 @@
+<div class="ui-wrapper-list-item primary">
+  <div class="ui-list-item"
+       #listElement
+       [class.selected]="selected"
+       [style.paddingLeft]="grouped ? '15px' : '5px'"
+       [style.line-height]="height"
+       [class.disabled]="disabled"
+       [style.height]="height">
+    <ng-container *ngTemplateOutlet="template"></ng-container>
+  </div>
+</div>

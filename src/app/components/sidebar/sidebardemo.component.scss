@@ -1,0 +1,115 @@
+.sidebar {
+  width: 600px;
+}
+
+.bar-buttons {
+  display: -webkit-inline-box;
+  width: 100%;
+  position: relative;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 100%;
+
+}
+
+.content-border {
+  border: 1px solid #ccc
+}
+
+.content-text {
+  padding: 20px;
+  color: #959595;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: justify;
+}
+
+.trigger {
+  height: 30px;
+  background: #e4e4e4;
+  border: 1px solid #aaaaaa;
+  border-bottom: 0;
+  color: #a7a7a7;
+  user-select: none;
+  text-align: center;
+  padding: 0 10px;
+  line-height: 30px;
+  cursor: pointer;
+  transition: all 200ms;
+  &:first-child {
+    border-right: 0;
+  }
+}
+
+.list-sidebar:not(.notDocket) {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.list-sidebar:not(.notDocket) li {
+  display: grid;
+  padding: 10px;
+  border-bottom: 1px solid #dfdfdf;
+  font-size: 1em;
+  text-align: center;
+  color: #878787;
+  width: 80px;
+}
+
+.list-sidebar:not(.notDocket) li i {
+  text-align: center;
+  padding: 0;
+  font-size: 1.5em;
+}
+
+tl-sidebar {
+  background-color: #66CC99;
+}
+
+.list-sidebar li {
+  &:hover {
+    background-color: #e3e3e3;
+    transition: all 200ms;
+    cursor: pointer;
+  }
+}
+
+.notDocket {
+  padding: 0;
+  display: grid;
+  list-style: none !important;
+}
+
+.notDocket li {
+  padding: 10px;
+  display: grid;
+  grid-template-areas:
+    'icon label';
+  font-size: 1em;
+  color: #878787;
+  border-bottom: 1px solid #dfdfdf;
+  & i {
+    grid-area: icon;
+    grid-column-start: 0;
+    grid-column-end: 1;
+    text-align: center;
+    width: 60px;
+    height: 30px;
+    font-size: 1.5em;
+  }
+  & span {
+    grid-area: label;
+    line-height: 30px;
+  }
+}
+
+

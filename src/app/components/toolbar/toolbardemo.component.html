@@ -1,0 +1,39 @@
+<div class="router-outlet">
+  <app-showcase-header name="Toolbar" module="ToolbarModule">
+    The Toolbar is a container for headers, titles and actions.
+  </app-showcase-header>
+  <div class="showcase">
+    <div class="row">
+      <div class="col-md-12">
+        <app-showcase-card [title]="'Showcase'" [icon]="'fas fa-desktop'">
+          <app-card>
+            <div class="col-12">
+              <tl-toolbar [height]="'60px'"><span>Toolbar Basic</span></tl-toolbar>
+              <div class="spacer"></div>
+              <tl-toolbar [color]="'primary'"><span>Toolbar Primary</span></tl-toolbar>
+              <div class="spacer"></div>
+              <tl-toolbar [color]="'information'"><span>Toolbar Information</span></tl-toolbar>
+              <div class="spacer"></div>
+              <tl-toolbar [color]="'warning'"><span>Toolbar Warning</span></tl-toolbar>
+              <div class="spacer"></div>
+              <tl-toolbar [color]="'danger'"><span>Toolbar Danger</span></tl-toolbar>
+              <div class="spacer"></div>
+              <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-toolbar><span>Toolbar Basic</span></tl-toolbar>
+<tl-toolbar [color]="'primary'"><span>Toolbar Primary</span></tl-toolbar>
+<tl-toolbar [color]="'information'"><span>Toolbar Information</span></tl-toolbar>
+<tl-toolbar [color]="'warning'"><span>Toolbar Warning</span></tl-toolbar>
+<tl-toolbar [color]="'danger'"><span>Toolbar Danger</span></tl-toolbar>
+</textarea>
+            </div>
+          </app-card>
+        </app-showcase-card>
+        <app-showcase-card [title]="'Properties'" [icon]="'fas fa-clipboard-list'">
+          <app-card>
+            <app-showcase-table-properties [data]="dataTableProperties"></app-showcase-table-properties>
+          </app-card>
+        </app-showcase-card>
+      </div>
+    </div>
+  </div>
+</div>

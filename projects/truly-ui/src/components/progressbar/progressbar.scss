@@ -1,0 +1,57 @@
+.ui-progressbar-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.border-rounded {
+  border-radius: 10px;
+}
+
+.ui-progressbar {
+  width: 100%;
+}
+
+.determinate-progress {
+  width: 100%;
+  height: inherit;
+  transition: all ease-in-out 200ms;
+}
+
+.indeterminate-progress {
+  width: 50%;
+  height: inherit;
+  animation-duration: 2s;
+  animation-name: indeterminate;
+  animation-iteration-count: infinite;
+  animation-direction: normal ;
+}
+
+.ui-progress-description {
+  user-select: none;
+  width: 100%;
+  position: absolute;
+  opacity: 0.5;
+  font-family: "Segoe UI", Lato, 'sans-serif', "Arial";
+  font-size: 1em;
+  font-weight: bold;
+  z-index: 1000;
+  text-align: center;
+}
+
+.ui-progress-detail {
+  font-size: 0.7em;
+  font-style: italic;
+  font-weight: normal;
+}
+
+@keyframes indeterminate {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(210%);
+  }
+}

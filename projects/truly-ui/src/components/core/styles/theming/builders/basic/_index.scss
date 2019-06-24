@@ -1,0 +1,13 @@
+@import "../../components";
+@import "../../theming";
+@import "../../pallete";
+@import "./skeleton";
+
+@mixin truly-basic-builder-theme($theme-config, $theme-name) {
+
+  $theme: generate-theme( $theme-config );
+
+  .tl-#{$theme-name}-theme{
+    @include truly-all-components($theme);
+  }
+}

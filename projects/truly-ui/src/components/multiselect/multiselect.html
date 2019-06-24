@@ -1,0 +1,70 @@
+<div [class]="'tl-multiselect-container '+ color">
+  <tl-label [required]="required" [labelTitle]="label" [labelSize]="labelSize" [labelPlacement]="labelPlacement"></tl-label>
+  <div class="multiselect-wrapper">
+    <div
+      class="input-wrapper-multiselect"
+      cdkOverlayOrigin #trigger="cdkOverlayOrigin"
+      #element
+      (click)="handleClickWrapper()"
+      [ngClass]="
+      {
+      'ng-touched': touched,
+      'ng-disabled': disabled,
+      'invalid': controlName?.control.errors || model?.control.errors,
+      'withValidators': hasValidator,
+      'inputFormOpenFilter': isOpen && filteredItems.length !== 0
+      }">
+      <div class="group-tags">
+        <tl-tag *ngFor="let tag of tags; let i = index"
+                [title]="isSimpleData() ? tag : tag[labelTag]"
+                (close)="removeTag(i, tag)"
+                (click)="selectTagClick(i, tag)">
+        </tl-tag>
+
+        <input autocomplete="off"
+               [name]="'notform'"
+               class="input-field"
+               [style.display]="'none'"
+               [(ngModel)]="value">
+
+        <input autocomplete="off"
+               class="input-field"
+               [ngClass]="
+             {
+              'invalid': controlName?.control.errors || model?.control.errors,
+              'withValidators': hasValidator,
+              'withoutValidators': !hasValidator
+              }"
+               #input
+               [attr.placeholder]="placeholder"
+               [attr.disabled]="disabled ? true : null"
+               (focus)="handleInputFocus()"
+               (keydown.arrowDown)="handleArrowDown($event)"
+               (keyup)="subject.next($event.target.value)"
+               (keydown)="handleKeyDown($event)">
+      </div>
+    </div>
+    <ng-template cdkConnectedOverlay
+                 (backdropClick)="isOpen = false"
+                 [cdkConnectedOverlayHasBackdrop]="true"
+                 [cdkConnectedOverlayOrigin]="trigger"
+                 [cdkConnectedOverlayBackdropClass]="'cdk-overlay-transparent-backdrop'"
+                 [cdkConnectedOverlayOpen]="isOpen">
+      <tl-overlay-list
+        @overlay
+        (selectOption)="addTag($event)"
+        (search)="handleKeyDown($event)"
+        [searchOnList]="true"
+        [customInput]="input"
+        [customFocus]="input"
+        [typeOfData]="typeOfData"
+        [hasDefaultOption]="false"
+        [datasource]="filteredItems"
+        [itemHeight]="itemHeight"
+        [width]="element.offsetWidth + 'px'"
+        [icon]="icon"
+        [keyText]="query">
+      </tl-overlay-list>
+    </ng-template>
+  </div>
+</div>

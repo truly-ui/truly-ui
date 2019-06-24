@@ -1,0 +1,74 @@
+.panelgroup-container {
+  width: 100%;
+  position: relative;
+  border-top: 0;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.panelgroup-body {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.header-group {
+  display: table;
+  line-height: 1.5em;
+  white-space: nowrap;
+  position: absolute;
+  top: -10.6px;
+  > .ui-button-action {
+    width: 18px;
+    height: 18px;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    place-content: center;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+.header-group span {
+  overflow: hidden;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.header-group .group-caption {
+  font-weight: 600;
+}
+
+.header-group span.spacer-left {
+  width: 5%;
+}
+
+.header-group span.spacer-right {
+  width: 95%;
+}
+
+.header-group span.spacer {
+  padding: 0 10px;
+}
+
+.header-group span.spacer-left {
+  padding: 0 7px 0 0;
+}
+
+.header-group span.spacer-right {
+  padding: 0 0 0 7px;
+}
+
+.header-group span.spacer:after {
+  display: inline-block;
+  width: 100%;
+  content: ".";
+  font-size: 0;
+  height: 1px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}

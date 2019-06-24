@@ -1,0 +1,66 @@
+<div class="router-outlet">
+  <app-showcase-header name="Switch" module="SwitchModule">
+    The Switch component allow's user to execute an action immediately.
+  </app-showcase-header>
+  <div class="showcase">
+    <div class="row">
+      <div class="col-md-12">
+        <app-showcase-card [title]="'Showcase'" [icon]="'fas fa-desktop'">
+          <app-card>
+            <div class="col-md-6">
+              <h6>Basic</h6>
+              <tl-switch [label]="'Option 1'" [(ngModel)]="basic"></tl-switch><br>
+              <app-showcase-returned-value [value]="basic"></app-showcase-returned-value>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-switch [label]="'Option 1'"></tl-switch>
+<tl-switch [label]="'Option 2'"></tl-switch>
+<tl-switch [label]="'Option 3'"></tl-switch>
+</textarea>
+            </div>
+            <div class="col-md-6">
+              <h6>Pre Selected Value</h6>
+              <tl-switch [label]="'Option 1'"></tl-switch>
+              <tl-switch [checked]="true" [label]="'Option 2'"></tl-switch>
+              <tl-switch [label]="'Option 3'"></tl-switch>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-switch [label]="'Option 1'"></tl-switch>
+<tl-switch [checked]="true" [label]="'Option 2'"></tl-switch>
+<tl-switch [label]="'Option 3'"></tl-switch>
+</textarea>
+            </div>
+          </app-card>
+          <app-card>
+            <div class="col-md-12">
+              <h6>Custom Color Checkbox</h6>
+              <tl-switch [label]="'Option 1'" [color]="'primary'" [checked]="true"></tl-switch>
+              <tl-switch [label]="'Option 2'" [color]="'warning'" [checked]="true"></tl-switch>
+              <tl-switch [label]="'Option 3'" [color]="'danger'" [checked]="true"></tl-switch>
+              <tl-switch [label]="'Option 4'" [color]="'success'" [checked]="true"></tl-switch>
+              <tl-switch [label]="'Option 5'" [color]="'information'" [checked]="true"></tl-switch>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-switch [label]="'Option 1'" [color]="'primary'" [checked]="true"></tl-switch>
+<tl-switch [label]="'Option 2'" [color]="'warning'" [checked]="true"></tl-switch>
+<tl-switch [label]="'Option 3'" [color]="'danger'" [checked]="true"></tl-switch>
+<tl-switch [label]="'Option 4'" [color]="'success'" [checked]="true"></tl-switch>
+<tl-switch [label]="'Option 5'" [color]="'information'" [checked]="true"></tl-switch>
+</textarea>
+            </div>
+          </app-card>
+        </app-showcase-card>
+      </div>
+    </div>
+  </div>
+  <app-showcase-card [title]="'Properties'" [icon]="'fas fa-clipboard-list'">
+    <app-card>
+      <app-showcase-table-properties [data]="dataTableProperties"></app-showcase-table-properties>
+    </app-card>
+  </app-showcase-card>
+  <app-showcase-card [title]="'Events'" [icon]="'ion ion-ios-radio'">
+    <app-card>
+      <h4><code>All <b>Angular Supported Events</b> can be used on this component.</code></h4>
+      <app-showcase-table-events [data]="events"></app-showcase-table-events>
+    </app-card>
+  </app-showcase-card>
+</div>

@@ -1,0 +1,21 @@
+<tl-form [mode]="'modal'" [formGroup]="form">
+  <tl-panelgroup [labelGroup]="'General'">
+    <div fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="5px">
+      <div fxLayout="row" fxLayoutAlign="space-between stretch">
+        <div class="form-group">
+          <tl-input fxFlex="30" formControlName="id" [labelSize]="100" [label]="'ID'"></tl-input>
+        </div>
+        <div class="form-group">
+          <tl-autocomplete [data]="dataBasic"
+                           [rowHeight]="40"
+                           [labelSize]="'60px'"
+                           [keyText]="'firstName'"
+                           [label]="'Cliente'"
+                           formControlName="cliente"
+                           [keyValue]="'id'">
+          </tl-autocomplete>
+        </div>
+      </div>
+    </div>
+  </tl-panelgroup>
+</tl-form>

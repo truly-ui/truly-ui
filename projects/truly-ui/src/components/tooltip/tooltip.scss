@@ -1,0 +1,50 @@
+.tooltip-text {
+  padding: 5px;
+  color: #FFF;
+  display: inline-block;
+  z-index: 1;
+  border-radius: 3px;
+  width: 180px;
+  height: initial;
+  text-align: center;
+  margin: 5px;
+  word-wrap: break-word;
+  background-color: #242525;
+  font-size: 1em !important;
+  font-family: Lato, "Segoe UI", "Helvetica";
+
+  .arrow {
+    position: absolute;
+    box-sizing: border-box;
+    height: 10px;
+    width: 10px;
+    border-style: solid;
+    border-color: #242525;
+    border-width: 0px 6px 6px 0px;
+  }
+
+  .left {
+    right: 0 !important;
+    transform: rotate(-45deg) !important;
+    top: calc(50% - 5px) !important;
+  }
+
+  .right {
+    transform: rotate(135deg);
+    top: calc(50% - 5px);
+    left: 0;
+  }
+
+  .bottom {
+    transform: rotate(-135deg);
+    top: 0;
+    left: calc(50% - 5px);
+  }
+
+  .top {
+    transform: rotate(45deg);
+    left: calc(50% - 5px);
+  }
+
+}
+

@@ -1,0 +1,70 @@
+@import "../core/styles/theming/theming";
+
+@mixin tl-menu-theme($theme) {
+
+  $basic:   map-deep-get($theme, 'basic');
+  $danger:  map-deep-get($theme, 'danger');
+  $primary: map-deep-get($theme, 'primary');
+
+  $border-basic: 1px solid map-deep-get($basic, "default", "border");
+
+  .ui-wrapper-menulist {
+
+    .ui-menulist-item {
+      color: map-deep-get($basic, "default", "foreground");
+      background: map-deep-get($basic, "default", "background");
+
+      > .icon {
+        color: map-deep-get($basic, "default", "foreground");
+      }
+
+      > .label {
+        color: map-deep-get($basic, "default", "foreground");
+      }
+
+      &.always-active {
+        background: map-deep-get($primary, "default", "background");
+
+        > .icon {
+          color: #FFFFFF;
+        }
+
+        > .label {
+          color: #FFFFFF !important;
+        }
+
+      }
+
+      &.router-active {
+        background: map-deep-get($basic, "hover", "background");
+        border-right: 3px solid  map-deep-get($primary, "default", "background");
+      }
+
+    }
+
+    .ui-submenu {
+      border: 1px solid map-deep-get($basic, "default", "border");
+    }
+
+    &.ui-menu-bordered {
+      border: 1px solid map-deep-get($basic, "default", "border");
+    }
+
+  }
+
+  .ui-wrapper-menulist ul li:hover {
+    background:  map-deep-get($basic, "hover", "background");
+    color: #FFF;
+  }
+
+  .ui-wrapper-menulist li:hover {
+    background: map-deep-get($basic, "hover", "background");
+    color: #FFF;
+  }
+
+  .ui-wrapper-menulist li:hover li:hover {
+    background: map-deep-get($basic, "hover", "background");
+  }
+
+
+}

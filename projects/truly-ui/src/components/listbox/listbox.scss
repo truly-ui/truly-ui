@@ -1,0 +1,25 @@
+.ui-listbox-wrapper {
+  position: relative;
+  height: 100%;
+  z-index: 1;
+}
+
+.ui-list-viewport {
+  overflow-y: scroll;
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+  &::-webkit-scrollbar {
+    border-radius: 5px;
+    width: 8px;
+  }
+}
+
+.ui-list-viewport-item {
+  box-sizing: border-box;
+  height: 50px;
+  scroll-snap-align: center;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}

@@ -1,0 +1,148 @@
+@mixin defaultInput() {
+  font: inherit;
+  background: 0 0;
+  border: none;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+  margin-left: 5px;
+  vertical-align: bottom;
+  text-align: inherit;
+  outline: none;
+  height: 23px;
+  font-size: 0.9em;
+  font-family: "Segoe UI", Lato, 'sans-serif', "Arial";
+}
+
+@mixin textInput {
+  font-family: "Segoe UI", Lato, 'sans-serif', "Arial";
+  font-size: 1em;
+}
+
+.tl-multiselect-container {
+  width: 100%;
+  display: table;
+
+  > .-labelTag {
+    display: table-cell;
+    text-align: right;
+    line-height: 1;
+    width: 100px;
+    white-space: nowrap;
+    vertical-align: middle;
+    font-weight: normal;
+    font-family: "Segoe UI", Lato, 'sans-serif', "Arial";
+    font-size: 0.9em;
+  }
+
+  > .multiselect-wrapper {
+    display: table-cell;
+
+    & small {
+      opacity: 0.7;
+    }
+
+    & .input-wrapper-multiselect {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 23px;
+      border-radius: 3px;
+      box-sizing: border-box;
+      flex-direction: row;
+      flex-wrap: wrap;
+      cursor: text;
+    }
+
+    & .input-field {
+      @include defaultInput;
+      &::placeholder {
+        @include textInput;
+      }
+    }
+
+    & .select-options {
+      display: block;
+      position: absolute;
+      width: 100%;
+      overflow: auto;
+      z-index: 1000;
+      margin: 0 auto;
+      padding: 0 !important;
+      cursor: pointer;
+    }
+
+    & .select-options::-webkit-scrollbar {
+      width: 0.5em;
+      border-radius: 3px;
+    }
+
+    & .group-tags {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      .tag {
+        position: relative;
+        display: flex;
+        align-items: center;
+        grid-template-columns: 1fr 20px;
+        cursor: pointer;
+        height: 15px;
+        border-radius: 3px;
+        font-size: 0.8em;
+        margin: 3px;
+        font-family: "Segoe UI", Lato, 'sans-serif', "Arial";
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        color: #FFFFFF;
+
+        & span {
+          padding: 0 5px;
+          text-align: center;
+        }
+
+        &:first-child {
+          border-top: 0;
+          margin-left: 3px;
+        }
+      }
+    }
+
+    & .tags-detail {
+      padding: 5px;
+      font-size: 10px;
+      opacity: 1 !important;
+    }
+
+    & .select-options {
+      border-radius: 3px;
+      & .itens {
+        display: list-item;
+        list-style: none;
+        font-size: 12px;
+        font-family: "Segoe UI", Lato, 'sans-serif', "Arial";
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      & small {
+        float: right;
+      }
+    }
+
+    & .dropdown-arrow {
+      left: 95%;
+      font-size: 1.2em;
+      position: absolute;
+    }
+  }
+
+}
+

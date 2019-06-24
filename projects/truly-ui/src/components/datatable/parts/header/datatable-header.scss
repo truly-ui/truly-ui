@@ -1,0 +1,82 @@
+.ui-datatable-header{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  padding: 0 17px 0 0;
+  position: relative;
+}
+
+.ui-datatable-header-wrap{
+  overflow: hidden;
+}
+
+.ui-datatable-column-separator {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 0;
+  width: 4px;
+  cursor: col-resize;
+  z-index: 9999;
+  //background-color: #111111; // ACTIVE TO DEBUG SEPARATOR
+}
+
+.ui-datatable-column-separator:hover {
+  cursor: col-resize;
+}
+
+.ui-datatable-table-head{
+  font-size: 1em;
+  > .ui-row{
+    height: 25px;
+    margin: 0;
+  }
+
+  > .ui-row-filter{
+    height: 32px;
+  }
+
+  > .ui-row .ui-sort-indicator {
+    font-size: 15px;
+    width: 5.65px;
+    height: 17px;
+    font-weight: 600;
+    content: ' ';
+  }
+  > .ui-row .ui-sort-indicator.-push-left {
+    float: right;
+  }
+  > .ui-row .ui-sort-indicator.-push-center {
+    float: right;
+  }
+  > .ui-row .ui-sort-indicator.-push-right {
+    float: left;
+  }
+  > .ui-row .ui-cel{
+    box-sizing: border-box;
+    padding-left: 5px;
+    padding-right: 5px;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  >.ui-row .ui-cel.-textleft{
+    text-align: left;
+  }
+  >.ui-row .ui-cel.-textright{
+    text-align: right;
+  }
+  >.ui-row .ui-cel.-textcenter{
+    text-align: center;
+  }
+  > .ui-row .ui-cel:last-child{
+    border-right: none
+  }
+  >.ui-row .ui-cel.ui-filter-cel {
+    padding: 5px;
+  }
+}

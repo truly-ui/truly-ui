@@ -1,0 +1,72 @@
+<div class="router-outlet">
+  <app-showcase-header name="Tooltip" module="TooltipModule">
+    The tooltip is an overlay component service that can be used in any HTML element.
+  </app-showcase-header>
+  <div class="showcase">
+    <div class="row">
+      <div class="col-md-12">
+        <app-showcase-card [title]="'Showcase'" [icon]="'fas fa-desktop'">
+          <app-card>
+            <div class="col-md-6">
+              <h6>Placement Top</h6>
+              <tl-input type="text" [tooltip]="{text: 'My tooltip', placement: 'top-center'}"></tl-input>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+   <tl-input type="text" [tooltip]="{text: 'My tooltip', placement: 'top-center'}"></tl-input>
+</textarea>
+            </div>
+            <div class="col-md-6">
+              <h6>Placement Bottom</h6>
+              <tl-input type="text" [tooltip]="{text: 'My tooltip', placement: 'bottom-center'}"></tl-input>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+  <tl-input type="text" [tooltip]="{text: 'My tooltip', placement: 'bottom-center'}"></tl-input>
+</textarea>
+            </div>
+          </app-card>
+          <app-card>
+            <div class="col-md-6">
+              <h6>Placement Right</h6>
+              <tl-input type="text" [tooltip]="{text: 'My tooltip', placement: 'right-center'}"></tl-input>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-input type="text" [tooltip]="{text: 'My tooltip', placement: 'right-center'}"></tl-input>
+</textarea>
+            </div>
+            <div class="col-md-6">
+              <h6>Placement Left</h6>
+              <tl-input type="text" [tooltip]="{text: 'My tooltip', placement: 'left-center'}"></tl-input>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-input type="text" [tooltip]="{text: 'My tooltip', placement: 'left-center'}"></tl-input>
+</textarea>
+            </div>
+          </app-card>
+          <app-card>
+            <div class="col-md-6">
+              <h6>Custom Background Color</h6>
+              <tl-input type="text" [tooltip]="{text: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.', placement: 'top-center', color: '#CC181E', width: '320px'}"></tl-input>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+  <tl-input type="text" [tooltip]="{text: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.', placement: 'top-center', color: '#CC181E', width: '320px'}"></tl-input>
+</textarea>
+            </div>
+            <div class="col-md-6">
+              <h6>Custom Font Color</h6>
+              <tl-input type="text" [tooltip]="{text: 'My tooltip', placement: 'bottom-center', color: '#399cc6', fontColor: '#fff' }"></tl-input>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+               <tl-input type="text" [tooltip]="{text: 'My tooltip', placement: 'bottom-center', color: '#167AC6', fontColor: '#fff' }"></tl-input>
+</textarea>
+            </div>
+          </app-card>
+        </app-showcase-card>
+      </div>
+    </div>
+  </div>
+  <app-showcase-card [title]="'Properties'" [icon]="'fas fa-clipboard-list'">
+    <app-card>
+      <app-showcase-table-properties [data]="tooltipProperties"></app-showcase-table-properties>
+    </app-card>
+  </app-showcase-card>
+</div>

@@ -1,0 +1,13 @@
+.ui-list-item {
+  padding: 0 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  &:focus {
+    outline: none;
+  }
+}
+
+.disabled {
+  opacity: 0.3;
+}

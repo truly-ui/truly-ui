@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+
+.ui-timepicker-wrapper {
+  position: relative;
+  .hidden-control {
+    display: none;
+  }
+}
+
+.ui-wrapper-content {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  user-select: none;
+  cursor: pointer;
+  > .ui-timepicker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 50px;
+    > .ui-selected-time {
+      font-size: 1.5em;
+      font-family: Lato, "Segoe UI";
+      font-weight: normal;
+    }
+  }
+  > .ui-timepicker-footer {
+    display: flex;
+    align-items: center;
+    place-content: space-between;
+    border: 1px solid #ccc;
+    background: #fff;
+    padding: 10px;
+  }
+  > .ui-timepicker-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 210px;
+    > .ui-transparent-section {
+      width: 218px;
+      position: absolute;
+      height: 210px;
+      pointer-events: none;
+    }
+    > .ui-controller-section {
+      pointer-events: none;
+      height: 30px;
+      width: 220px;
+      position: absolute;
+      top: calc(50% - 15px);
+      z-index: 10;
+      > .double-dot {
+        position: absolute;
+        line-height: 25px;
+        font-size: 1.2em;
+      }
+    }
+    > .ui-hour-content {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      transition: background 200ms linear;
+    }
+    > .ui-minute-content {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      transition: background 200ms linear;
+      span {
+        position: absolute;
+      }
+    }
+    > .ui-ampm-content {
+      width: 100%;
+      transition: background 200ms linear;
+      position: relative;
+      > .list {
+        position: absolute;
+        overflow: hidden;
+        transition: top 150ms linear;
+        height: 60px;
+        top: calc(50% - 23px);
+      }
+    }
+
+  }
+  > .ui-title-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    > .ui-picker-title {
+      font-size: 0.8em;
+      color: #505050;
+      font-weight: bold;
+    }
+  }
+  .list {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+    text-align: center;
+    font-size: 1em;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow: scroll;
+    &::-webkit-scrollbar {
+      background: transparent;
+      width: 1px;
+    }
+    > .ui-list-item {
+      height: 30px;
+      font-size: 1.2em;
+      scroll-snap-align: center;
+      line-height: 30px;
+      font-family: "Segoe UI", Lato, 'sans-serif', "Arial";
+    }
+  }
+
+  .selectedItem {
+    font-weight: 600;
+  }
+
+  .list {
+    > div:not(.ui-list-item) {
+      height: 20px;
+    }
+  }
+
+}

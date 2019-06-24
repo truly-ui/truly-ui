@@ -1,0 +1,14 @@
+
+<ng-template cdkConnectedOverlay
+             (backdropClick)="onBackdropClick()"
+             [cdkConnectedOverlayHasBackdrop]="true"
+             [cdkConnectedOverlayBackdropClass]="'cdk-overlay-transparent-backdrop'"
+             [cdkConnectedOverlayOpen]="isOpen">
+
+<div @overlay class="ui-wrapper-overlay-panel">
+  <div class="ui-overlay-panel" [style.width]="width">
+    <ng-content></ng-content>
+  </div>
+</div>
+
+</ng-template>

@@ -1,0 +1,37 @@
+@import "../core/styles/theming/theming";
+
+@mixin tl-navigator-theme($theme) {
+
+  $basic:   map-deep-get($theme, 'basic');
+
+  .tl-navigator{
+    > .ui-navigator{
+      background-color: map-deep-get($basic, "default", "background");
+      color: map-deep-get($basic, "default", "foreground");
+      &.ui-with-border{
+        border: 1px solid map-deep-get($basic, "default", "border");
+      }
+      &:hover, &:focus{
+        background-color: map-deep-get($basic, "hover", "background");
+      }
+    }
+    > .ui-button{
+      background-color: map-deep-get($basic, "default", "background");
+      color: map-deep-get($basic, "default", "foreground");
+      &.ui-with-border{
+        border-top: 1px solid map-deep-get($basic, "default", "border");
+        border-bottom: 1px solid map-deep-get($basic, "default", "border");
+      }
+      &:hover, &:focus{
+        background-color: map-deep-get($basic, "hover", "background");
+        outline: none;
+      }
+      &.ui-with-border:first-child {
+        border-left: 1px solid map-deep-get($basic, "default", "border");;
+      }
+      &.ui-with-border:last-child{
+        border-right: 1px solid map-deep-get($basic, "default", "border");;
+      }
+    }
+  }
+}

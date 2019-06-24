@@ -1,0 +1,152 @@
+<div class="router-outlet">
+  <app-showcase-header name="Modal" module="ModalModule">
+    Below is a fixed modal example (meaning its position is related with the window). Included are the modal header and the body wrapper,
+    the modal content is a component
+    that you inject inside of modal component, passing on the service at the creation moment.
+  </app-showcase-header>
+  <div class="showcase">
+    <div class="row">
+      <div class="col-md-12">
+        <app-showcase-card [title]="'Showcase'" [icon]="'fas fa-desktop'">
+          <app-card>
+           <div class="col-12">
+             <tl-button [text]="'Show Modal'" [iconAddonBefore]="'fas fa-desktop'" (click)="modal1()"></tl-button>
+           </div>
+          </app-card>
+        </app-showcase-card>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <app-showcase-card [title]="'Modal Features'" [icon]="'far fa-lightbulb'">
+          <app-card>
+            <div class="col-12">
+              <h5>Modal Container</h5>
+              <p>The Modal Container is used to group all modals that are minimized.</p>
+              <tl-modal-toolbar [color]="'success'"></tl-modal-toolbar>
+              <hr>
+            </div>
+            <div class="col-12">
+              <h5>Drag And Drop</h5>
+              <p>Allows user drag and drop the modal through it area.</p>
+              <hr>
+            </div>
+            <div class="col-12">
+              <h5>Fixed by Parent</h5>
+              <p>The fixed parent set the Modal Area to it parent and the drag going be only in that area.</p>
+              <hr>
+            </div>
+            <div class="col-12">
+              <h5>Controls (Minimize, Maximize and Close)</h5>
+              <p>The controls allows the user to organize their windows, combining with the Container Modal, is very usable.</p>
+              <hr>
+            </div>
+            <div class="col-12">
+              <h5>Modal Result</h5>
+              <p>According with the button and the <code>mdResult</code> the modal will dispatch the events to the origin component.</p>
+            </div>
+          </app-card>
+        </app-showcase-card>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <app-showcase-card [title]="'Making it Work'" [icon]="'ion ion-ios-hammer'">
+          <app-card>
+            <div class="col-12">
+              <h4>Step One</h4>
+              <h6>Declare the <code>ModalService</code> and set the <code>tlContainerModal</code> Directive on a HTML Element root, where modal going to be on it.
+                For Example: </h6>
+              <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<div class="content-wrapper" tlContainerModal>
+  <!-- Main content -->
+  <section class="content">
+    <router-outlet></router-outlet>
+  </section>
+  <!-- /.content -->
+</div>
+            </textarea>
+              <hr>
+              <h4>Step Two</h4>
+              <h6>Inside of your <code>constructor</code>, you have to declare <code>ComponentFactoryResolver</code> and <code>ModalService</code>.</h6>
+              <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'typescript'">
+  constructor(public compiler: ComponentFactoryResolver, public modalService: ModalService) {}
+        </textarea>
+              <hr>
+              <h4>Step Tree</h4>
+              <h6>Import your custom component that will be inside the modal as entry component the property ( <code>entryComponents</code> ) in your module. In this case is <code>NewModal</code></h6>
+              <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'typescript'">
+
+  @NgModule({
+    declarations: [
+      ModalDemo,
+      NewModal,
+    ],
+    imports:[
+      CommonModule,
+      FormsModule,
+      ModalModule.forRoot(),
+    ],
+    exports: [
+      ModalDemo,
+      NewModal
+    ],
+    providers: [
+      DialogService
+    ],
+    entryComponents: [
+      NewModal
+    ]
+  })
+  export class ModalDemoModule {}
+        </textarea>
+              <hr>
+              <h4>Final Step</h4>
+              <h6>Create an function to call the function <code>createModal</code> passing the following parameters. For example:</h6>
+              <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'typescript'">
+this.modalService.createModal(NewModalComponent, this.compiler, null, (modalResult) => {
+  this.modalResult = modalResult;
+}).on('show', () => {
+  console.log('Show Modal');
+});
+        </textarea>
+            </div>
+          </app-card>
+        </app-showcase-card>
+      </div>
+    </div>
+    <app-showcase-card [title]="'Modal Results'" [icon]="'fas fa-clipboard-list'">
+      <app-card>
+       <div class="col-12">
+         <table class="table table-truly">
+           <thead class="table-truly-head">
+           <tr>
+             <th>Name</th>
+             <th>Description</th>
+             <th>Value</th>
+           </tr>
+           </thead>
+           <tbody class="table-truly-body" *ngFor="let item of modalResults; let i = index">
+           <tr>
+             <td><span>{{ item.name }}</span></td>
+             <td>{{ item.description }}</td>
+             <td><code>{{ item.value }}</code></td>
+           </tr>
+           </tbody>
+         </table>
+       </div>
+      </app-card>
+    </app-showcase-card>
+
+    <app-showcase-card [title]="'Properties'" [icon]="'fas fa-clipboard-list'">
+      <app-card>
+        <app-showcase-table-properties [data]="modalprop"></app-showcase-table-properties>
+      </app-card>
+    </app-showcase-card>
+    <app-showcase-card [title]="'Events'" [icon]="'ion ion-ios-radio'">
+      <app-card>
+        <app-showcase-table-events [data]="modalevts"></app-showcase-table-events>
+      </app-card>
+    </app-showcase-card>
+  </div>
+</div>

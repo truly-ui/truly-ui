@@ -1,0 +1,245 @@
+<div class="router-outlet">
+  <app-showcase-header name="Input" module="InputModule">
+    Input specifies an input field where the user can enter text.
+  </app-showcase-header>
+  <div class="showcase">
+    <div class="row">
+      <div class="col-md-12">
+        <app-showcase-card [title]="'Showcase'" [icon]="'fas fa-desktop'">
+          <app-card>
+            <div class="col-md-6">
+              <span>Basic</span>
+              <tl-input [(ngModel)]="basic"></tl-input>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-input [(ngModel)]="basic"></tl-input>
+</textarea>
+            </div>
+            <div class="col-md-6">
+              <span>Icon Before</span>
+              <tl-input [iconBefore]="'fas fa-print'"></tl-input>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-input [iconBefore]="'fas fa-print'"></tl-input>
+</textarea>
+            </div>
+          </app-card>
+          <app-card>
+            <div class="col-md-6">
+              <span>Icon After</span>
+              <tl-input
+                [iconAfter]="'fas fa-print'">
+              </tl-input>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-input [iconAfter]="'fas fa-print'"></tl-input>
+</textarea>
+            </div>
+            <div class="col-md-6">
+              <span>Icon Both Sides</span>
+              <tl-input
+                [iconBefore]="'ion ion-md-card'"
+                [iconAfter]="'ion ion-logo-usd'">
+              </tl-input>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-input [iconBefore]="'ion ion-card'" [iconAfter]="'ion ion-social-usd'"></tl-input>
+</textarea>
+            </div>
+          </app-card>
+          <app-card>
+            <div class="col-md-6">
+              <span>Label</span>
+              <tl-input
+                [labelSize]="'20px'"
+                [label]="'Name'">
+              </tl-input>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-input
+  [labelSize]="'20px'"
+  [label]="'Name'">
+</tl-input>
+</textarea>
+            </div>
+            <div class="col-md-6">
+              <span>Clear Button</span>
+              <tl-input
+                ngModel="Click at the button side"
+                [clearButton]="true">
+              </tl-input>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-input
+  ngModel="Click at the button side"
+  [clearButton]="true">
+</tl-input>
+</textarea>
+            </div>
+          </app-card>
+          <app-card>
+            <div class="col-md-6">
+              <span>Disabled</span>
+              <tl-input
+                [(ngModel)]="disabled"
+                [disabled]="true">
+              </tl-input>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-input
+  [(ngModel)]="disabled"
+  [disabled]="true">
+</tl-input>
+</textarea>
+            </div>
+            <div class="col-md-6">
+              <span>ReadOnly</span>
+              <tl-input
+                [(ngModel)]="readonly"
+                [readonly]="true">
+              </tl-input>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-input
+  [(ngModel)]="readonly"
+  [readonly]="true">
+</tl-input>
+</textarea>
+            </div>
+          </app-card>
+          <app-card>
+            <div class="col-md-6">
+              <span>Placeholder</span>
+              <tl-input
+                [placeholder]="'With Placeholder'">
+              </tl-input>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-input
+  [placeholder]="'With Placeholder'">
+</tl-input>
+</textarea>
+            </div>
+            <div class="col-md-6">
+              <span>Text Before</span>
+              <tl-input
+                textBefore="My Input">
+              </tl-input>
+             <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-input
+  textBefore="My Input">
+</tl-input>
+</textarea>
+            </div>
+          </app-card>
+          <app-card>
+            <div class="col-md-6">
+              <span>Text After</span>
+              <tl-input
+                textAfter="@domain.com">
+              </tl-input>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-input
+  textAfter="@domain.com">
+</tl-input>
+</textarea>
+            </div>
+            <div class="col-md-6">
+              <span>Text Alignment Right</span>
+              <tl-input
+                [textAlign]="'right'">
+              </tl-input>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-input
+  [textAlign]="'right'">
+</tl-input>
+</textarea>
+            </div>
+          </app-card>
+          <app-card>
+            <div class="col-md-6">
+              <span>With Directive Charcase(Uppercase)</span>
+              <tl-input charcase="UPPERCASE" [(ngModel)]="uppercase"></tl-input>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-input charcase="UPPERCASE" [(ngModel)]="uppercase"></tl-input>
+</textarea>
+            </div>
+            <div class="col-md-6">
+              <span>With Directive Charcase(Lowercase)</span>
+              <tl-input charcase="LOWERCASE" [(ngModel)]="lowercase"></tl-input>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-input charcase="LOWERCASE" [(ngModel)]="lowercase"></tl-input>
+</textarea>
+            </div>
+          </app-card>
+          <app-card>
+            <div class="col-md-12">
+              <span>Many Properties</span>
+              <tl-input
+                [iconBefore]="'fas fa-print'"
+                [placeholder]="'With Placeholder'"
+                [textAfter]="'US'"
+                [clearButton]="true"
+                ngModel="Many Properties"
+                [autocomplete]="'off'">
+              </tl-input>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-input
+  [iconBefore]="'fas fa-print'"
+  [placeholder]="'With Placeholder'"
+  [textAfter]="'US'"
+  [clearButton]="true"
+  ngModel="Many Properties"
+  [autocomplete]="'off'">
+</tl-input>
+</textarea>
+            </div>
+            <div class="col-md-12">
+              <div class="spacer"></div>
+              <span>With theme</span>
+              <tl-input
+                [iconBefore]="'fas fa-print'"
+                [placeholder]="'With Placeholder'"
+                [textAfter]="'US'"
+                [color]="'primary'"
+                [clearButton]="true"
+                ngModel="With theme"
+                [autocomplete]="'off'">
+              </tl-input>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-input
+  [iconBefore]="'fas fa-print'"
+  [placeholder]="'With Placeholder'"
+  [textAfter]="'US'"
+  [color]="'primary'"
+  [clearButton]="true"
+  ngModel="With theme"
+  [autocomplete]="'off'">
+</tl-input>
+</textarea>
+            </div>
+          </app-card>
+        </app-showcase-card>
+      </div>
+    </div>
+  </div>
+<app-showcase-card [title]="'Properties'" [icon]="'fas fa-clipboard-list'">
+  <app-card>
+    <app-showcase-table-properties [data]="dataTableProperties"></app-showcase-table-properties>
+  </app-card>
+</app-showcase-card>
+<app-showcase-card [title]="'Events'" [icon]="'ion ion-ios-radio'">
+  <app-card>
+    <h4><code>All <b>Angular Supported Events</b> can be used on this component.</code></h4>
+    <app-showcase-table-events [data]="dataTableEvents"></app-showcase-table-events>
+  </app-card>
+</app-showcase-card>
+</div>
+

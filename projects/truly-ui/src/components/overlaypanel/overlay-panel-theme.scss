@@ -1,0 +1,12 @@
+@import "../core/styles/theming/theming";
+
+@mixin _tl-overlay-panel-theme-schema( $theme, $action ){
+
+}
+
+@mixin tl-overlay-panel-theme( $theme ) {
+
+  .ui-wrapper-overlay-panel {
+
+  }
+}

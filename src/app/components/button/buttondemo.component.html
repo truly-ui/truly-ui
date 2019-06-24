@@ -1,0 +1,193 @@
+<div class="router-outlet">
+  <app-showcase-header name="Button" module="ButtonModule">
+    The Truly-UI buttons are styles for actions in forms, dialogs, and more with support for multiple sizes, states
+    and many properties for customization
+  </app-showcase-header>
+  <div class="showcase">
+    <div class="row">
+      <div class="col-md-12">
+        <app-showcase-card [title]="'Showcase'" [icon]="'fas fa-desktop'">
+          <app-card>
+            <div class="col-md-6">
+              <h6>Basic</h6>
+              <tl-button [text]="'Button'"></tl-button>
+              <br>
+              <div class="spacer"></div>
+              <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+                <tl-button [text]="'Button'"></tl-button>
+              </textarea>
+            </div>
+            <div class="col-md-6">
+              <h6>Addon - Icon Before</h6>
+              <tl-button [text]="'Ok'" [iconAddonBefore]="'fas fa-print'">
+              </tl-button>
+              <div class="spacer"></div>
+              <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+                <tl-button [text]="'Ok'" [iconAddonBefore]="'fas fa-print'"></tl-button>
+              </textarea>
+            </div>
+          </app-card>
+          <app-card>
+            <div class="col-md-12">
+              <h6>Color</h6>
+              <tl-button [text]="'Basic'" [color]="'basic'"></tl-button>
+              <tl-button [text]="'Primary'" [color]="'primary'"></tl-button>
+              <tl-button [text]="'Success'" [color]="'success'"></tl-button>
+              <tl-button [text]="'Danger'" [color]="'danger'"></tl-button>
+              <tl-button [text]="'Warning'" [color]="'warning'"></tl-button>
+              <tl-button [text]="'Information'" [color]="'information'"></tl-button>
+              <div class="spacer"></div>
+              <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-button [text]="'Basic'" [color]="'basic'"></tl-button>
+<tl-button [text]="'Primary'" [color]="'primary'"></tl-button>
+<tl-button [text]="'Success'" [color]="'success'"></tl-button>
+<tl-button [text]="'Danger'" [color]="'danger'"></tl-button>
+<tl-button [text]="'Warning'" [color]="'warning'"></tl-button>
+<tl-button [text]="'Information'" [color]="'information'"></tl-button>
+              </textarea>
+            </div>
+          </app-card>
+          <app-card>
+            <div class="col-md-12">
+              <h6>Button Icon</h6>
+              <ng-template #icon>
+                <div style="padding: 0 10px">
+                  <tl-icon [lib]="'fa'" [style]="'fas'">home</tl-icon>
+                </div>
+              </ng-template>
+              <tl-button width="'40px'" [template]="icon" [color]="'basic'"></tl-button>
+              <tl-button width="'40px'" [template]="icon" [color]="'primary'"></tl-button>
+              <tl-button width="'40px'" [template]="icon" [color]="'success'"></tl-button>
+              <tl-button width="'40px'" [template]="icon" [color]="'danger'"></tl-button>
+              <tl-button width="'40px'" [template]="icon" [color]="'warning'"></tl-button>
+              <tl-button width="'40px'" [template]="icon" [color]="'information'"></tl-button>
+              <div class="spacer"></div>
+              <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<ng-template #icon>
+  <div style="padding: 0 10px">
+    <tl-icon [lib]="'fa'" [style]="'fas'">home</tl-icon>
+  </div>
+</ng-template>
+<tl-button width="'40px'" [template]="icon" [color]="'basic'"></tl-button>
+<tl-button width="'40px'" [template]="icon" [color]="'primary'"></tl-button>
+<tl-button width="'40px'" [template]="icon" [color]="'success'"></tl-button>
+<tl-button width="'40px'" [template]="icon" [color]="'danger'"></tl-button>
+<tl-button width="'40px'" [template]="icon" [color]="'warning'"></tl-button>
+<tl-button width="'40px'" [template]="icon" [color]="'information'"></tl-button>
+              </textarea>
+            </div>
+          </app-card>
+          <app-card>
+            <div class="col-md-6">
+              <h6>Addon - Icon After</h6>
+              <tl-button [text]="'Button'" [iconAddonAfter]="'fa fa-home'"></tl-button>
+              <div class="spacer"></div>
+              <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+                <tl-button [text]="'Button'" [iconAddonAfter]="'fa fa-home'"></tl-button>
+              </textarea>
+            </div>
+            <div class="col-md-6">
+              <h6>Addon - Icon Before and After</h6>
+              <tl-button [text]="'Button'" [iconAddonBefore]="'fas fa-print'" [iconAddonAfter]="'fa fa-home'"></tl-button>
+              <div class="spacer"></div>
+              <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+                <tl-button [text]="'Button'" [iconAddonBefore]="'fas fa-print'" [iconAddonAfter]="'fa fa-home'"></tl-button>
+              </textarea>
+            </div>
+          </app-card>
+          <app-card>
+            <div class="col-md-6">
+              <h6>Icon Before Text Button</h6>
+              <tl-button [text]="'Button'" [iconBeforeText]="'fa fa-home'"></tl-button>
+              <div class="spacer"></div>
+              <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+                <tl-button [text]="'Button'" [iconBeforeText]="'fa fa-home'"></tl-button>
+              </textarea>
+            </div>
+            <div class="col-md-6">
+              <h6>Icon After Text Button</h6>
+              <tl-button [text]="'Button'" [iconAfterText]="'fas fa-print'"></tl-button>
+              <div class="spacer"></div>
+              <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+                <tl-button [text]="'Button'" [iconAfterText]="'fas fa-print'"></tl-button>
+              </textarea>
+            </div>
+          </app-card>
+          <app-card>
+            <div class="col-md-6">
+              <h6>Width</h6>
+              <tl-button [text]="'Button'" [width]="'150px'"></tl-button>
+              <div class="spacer"></div>
+              <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+                <tl-button [text]="'Button'" [width]="'150px'"></tl-button>
+              </textarea>
+            </div>
+            <div class="col-md-6">
+              <h6>Height</h6>
+              <tl-button [text]="'Button'" [height]="'40px'" [iconAddonAfter]="'fas fa-print'"></tl-button>
+              <div class="spacer"></div>
+              <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+                <tl-button [text]="'Button'" [height]="'40px'" [iconAddonAfter]="'fas fa-print'"></tl-button>
+              </textarea>
+            </div>
+          </app-card>
+          <app-card>
+            <div class="col-md-6">
+              <h6>Disabled</h6>
+              <tl-button [text]="'Button'" [disabled]="true">
+              </tl-button>
+              <div class="spacer"></div>
+              <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+                <tl-button [text]="'Button'" [disabled]="true"></tl-button>
+              </textarea>
+            </div>
+            <div class="col-md-6">
+              <h6>Custom Style</h6>
+              <tl-button [text]="'Button'">
+              </tl-button>
+              <div class="spacer"></div>
+              <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+                <tl-button [text]="'Button'"></tl-button>
+              </textarea>
+            </div>
+          </app-card>
+          <app-card>
+            <div class="col-md-6">
+              <h6>Loading Button</h6>
+              <tl-button
+                [isLoading]="isLoading"
+                [width]="'200px'"
+                [color]="'primary'"
+                [text]="'Click Me'"
+                [textLoading]="'Saving'"
+                (click)="onClickButtonLoading()">
+              </tl-button>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+ <tl-button [isLoading]="isLoading" [width]="'200px'" [color]="'primary'" [text]="'Click Me'" [textLoading]="'Saving'" (click)="onClickButtonLoading()"></tl-button>
+</textarea>
+            </div>
+            <div class="col-md-6">
+              <h6>Many Properties</h6>
+              <tl-button [text]="'Button'" [iconAddonBefore]="'fas fa-print'" [iconAfterText]="'fa fa-home'"></tl-button>
+              <div class="spacer"></div>
+              <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+                <tl-button [text]="'Button'" [iconAddonBefore]="'fas fa-print'" [iconAfterText]="'fa fa-home'"></tl-button>
+              </textarea>
+            </div>
+          </app-card>
+        </app-showcase-card>
+      </div>
+    </div>
+    <app-showcase-card [title]="'Properties'" [icon]="'fas fa-clipboard-list'">
+      <app-card>
+        <app-showcase-table-properties [data]="dataTableProperties"></app-showcase-table-properties>
+      </app-card>
+    </app-showcase-card>
+    <app-showcase-card [title]="'Events'" [icon]="'ion ion-ios-radio'">
+      <app-card>
+        <app-showcase-table-events [data]="dataEvents"></app-showcase-table-events>
+      </app-card>
+    </app-showcase-card>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<div #modal (mousedown)="mousemoveListener(); setActive();" (mouseup)="mouseupListener()" [class]="'tl-modal-container ' + color">
+    <div class="header" #headerBox>
+        <div class="bar"
+             [ngClass]="serviceControl.activeModal === componentRef ? '-active' : '-inactive'"
+             (mousedown)="mouseDown($event);"
+             (dblclick)="maximizeModal()">
+            <span class="ui-icon"><tl-icon>{{ icon }}</tl-icon></span>
+            <span class="ui-title">{{title}}</span>
+        </div>
+        <div class="controls" [ngClass]="serviceControl.activeModal === componentRef ? '-active' : '-inactive'">
+            <div class="control-item"
+                 [ngClass]="{'disabled': !minimizable}"
+                 (click)="minimizeModal()">
+                <tl-icon [lib]="'ion'" [class.disabled]="!minimizable">remove</tl-icon>
+            </div>
+
+            <div class="control-item" *ngIf="!maximized"
+                 [ngClass]="{'disabled': !maximizable}"
+                 [ngStyle]="{'zIndex': modal.style.zIndex}"
+                 [shortcut]="maximizeShortcut"
+                 (click)="maximizeModal()">
+              <tl-icon [lib]="'ion'" [class.disabled]="!maximizable">expand</tl-icon>
+            </div>
+
+            <div class="control-item" *ngIf="maximized"
+                 [ngClass]="{'disabled': !restoreMaximize}"
+                 [ngStyle]="{'zIndex': modal.style.zIndex}"
+                 [shortcut]="restoreShortcut"
+                 (click)="restoreMaximizeModal()">
+              <tl-icon [lib]="'ion'" [class.disabled]="!restoreMaximize">contract</tl-icon>
+            </div>
+
+            <div class="control-item"
+                 [ngClass]="{'disabled': !closable}"
+                 [ngStyle]="{'zIndex': modal.style.zIndex}"
+                 [shortcut]="closeShortcut"
+                 (click)="closeModal()">
+              <tl-icon [lib]="'ion'" [class.disabled]="!closable">close</tl-icon>
+            </div>
+        </div>
+    </div>
+    <div class="body" #body></div>
+    <ng-content></ng-content>
+</div>

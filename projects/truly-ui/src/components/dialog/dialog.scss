@@ -1,0 +1,29 @@
+.content-dialog {
+  position: relative;
+  margin: 0 auto;
+  min-height: 140px;
+  min-width: 400px;
+  max-width: 60vw;
+  > .form {
+    padding: 23px;
+    text-align: center;
+    > p {
+      font-family: "Segoe UI", Lato, 'sans-serif', "Arial";
+      font-size: 1em;
+      font-weight: normal;
+      line-height: 1.5em;
+      word-wrap: break-word;
+      word-break: break-all;
+    }
+  }
+  > .header-controls {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    float: left;
+    width: 100%;
+  }
+}
+
+

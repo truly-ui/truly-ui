@@ -1,0 +1,56 @@
+<div class="ui-wrapper-list">
+  <div class="dropdown-list-wrapper-select" [style.width]="width">
+    <div class="search-input" *ngIf="searchOnList && !customFocus">
+      <tl-input
+        (input)="handleInput($event)"
+        (keydown.ArrowUp)="keyManager.setPreviousItemActive(); handleScrollIntoView();"
+        (keydown.ArrowDown)="keyManager.setNextItemActive(); handleScrollIntoView();"
+        (keydown.enter)="emitSelectOption(); $event.preventDefault()">
+      </tl-input>
+    </div>
+
+    <section class="dropdown-list-select"
+             [style.maxHeight]="maxHeight">
+      <div class="ui-label-notfound" *ngIf="notFound">{{ emptyList }}</div>
+      <div *ngIf="hasDefaultOption"
+           tabindex="-1"
+           class="default-option"
+           (click)="defaultOptionClick()"
+           [style.lineHeight]="itemHeight" [style.height]="itemHeight">
+        <i *ngIf="defaultIcon" class="{{ defaultIcon }}"></i>
+        {{ defaultOptionText }}
+      </div>
+
+      <div *ngFor="let group of groups" class="group-list">
+        <div *ngIf="group.description" class="group-description">{{ group.description }}</div>
+        <tl-list-item *ngFor="let item of group.items"
+                      [height]="itemHeight"
+                      #listItem="listItem"
+                      [template]="groupTemplate"
+                      (keydown)="handleSearchByLetter($event)"
+                      (keydown.enter)="handleClickOption($event, listItem)"
+                      (click)="handleClickOption($event, listItem)"
+                      [item]="item">
+          <ng-template #groupTemplate>
+            <i *ngIf="item[keyIcon]" class="{{ item[keyIcon] }}" style="padding: 0 5px"></i>
+            <span [innerHTML]="getTextContent(item) | highlight:searchText"></span>
+          </ng-template>
+        </tl-list-item>
+      </div>
+        <tl-list-item *ngFor="let item of unGrouped"
+                      [height]="itemHeight"
+                      [grouped]="false"
+                      [template]="ungroupTemplate"
+                      #listItem="listItem"
+                      (keydown)="handleSearchByLetter($event)"
+                      (keydown.enter)="handleClickOption($event, listItem)"
+                      (click)="handleClickOption($event, listItem)"
+                      [item]="item">
+          <ng-template #ungroupTemplate>
+            <i *ngIf="item[keyIcon]" class="{{ item[keyIcon] }}" style="padding: 0 5px"></i>
+            <span [innerHTML]="getTextContent(item) | highlight:searchText"></span>
+          </ng-template>
+        </tl-list-item>
+    </section>
+  </div>
+</div>

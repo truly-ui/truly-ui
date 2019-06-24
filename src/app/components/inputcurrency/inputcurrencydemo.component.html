@@ -1,0 +1,72 @@
+<div class="router-outlet">
+  <app-showcase-header name="InputCurrency" module="InputModule">
+    The [currency] directive allows the user to type numbers like currency types.
+  </app-showcase-header>
+  <div class="showcase">
+    <div class="row">
+      <div class="col-md-12">
+        <app-showcase-card [title]="'Showcase'" [icon]="'fas fa-desktop'">
+          <app-card>
+            <div class="col-md-6">
+              <h6>Basic</h6>
+              <tl-input currency [(ngModel)]="basic"></tl-input>
+              <app-showcase-returned-value [value]="basic"></app-showcase-returned-value>
+              <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+                 <tl-input currency [(ngModel)]="basic"></tl-input>
+             </textarea>
+            </div>
+            <div class="col-md-6">
+              <h6>Custom Prefix</h6>
+              <tl-input currency [currencyOptions]="{ prefix: '€ ' }" [(ngModel)]="customPrefix"></tl-input>
+              <app-showcase-returned-value [value]="customPrefix"></app-showcase-returned-value>
+              <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+                <tl-input currency [currencyOptions]="{ customPrefix: false }" [(ngModel)]="customPrefix"></tl-input>
+              </textarea>
+            </div>
+          </app-card>
+          <app-card>
+            <div class="col-md-6">
+              <h6>Deny Negative</h6>
+              <tl-input currency [currencyOptions]="{ allowNegative: false }" [(ngModel)]="denyNegative"></tl-input>
+              <app-showcase-returned-value [value]="denyNegative"></app-showcase-returned-value>
+              <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+                <tl-input currency [currencyOptions]="{ allowNegative: false }" [(ngModel)]="denyNegative"></tl-input>
+              </textarea>
+            </div>
+            <div class="col-md-6">
+              <h6>Alignment</h6>
+              <tl-input currency [currencyOptions]="{ align: 'left' }" [(ngModel)]="align"></tl-input>
+              <app-showcase-returned-value [value]="align"></app-showcase-returned-value>
+              <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+                 <tl-input currency [currencyOptions]="{ align: false }" [(ngModel)]="align"></tl-input>
+              </textarea>
+            </div>
+          </app-card>
+        </app-showcase-card>
+      </div>
+    </div>
+    <app-showcase-card [title]="'Properties'" [icon]="'fas fa-clipboard-list'">
+      <app-card>
+        <div class="col-md-12">
+          <h6>Currency Options</h6>
+        <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'typescript'">
+ export interface CurrencyConfig {
+  align: string;
+  allowNegative: boolean;
+  allowZero: boolean;
+  decimal: string;
+  precision: number;
+  prefix: string;
+  suffix: string;
+  thousands: string;
+  nullable: boolean;
+}
+        </textarea>
+        </div>
+      </app-card>
+      <app-card>
+        <app-showcase-table-properties [data]="dataTableProperties"></app-showcase-table-properties>
+      </app-card>
+    </app-showcase-card>
+  </div>
+</div>

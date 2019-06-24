@@ -1,0 +1,71 @@
+<div [class]="'tl-input-box ' + color" #inputBox>
+
+  <tl-label *ngIf="label" [required]="required" [labelTitle]="label" [labelPlacement]="labelPlacement" [labelSize]="labelSize"></tl-label>
+
+  <span *ngIf="iconBefore" (click)="onClickAddon($event, 'before')"
+        [ngClass]="{ 'withoutBorder' : !withBorder, '-flatborders': flatBorder }" class="addon -borderleft">
+    <tl-icon>{{ iconBefore }}</tl-icon>
+  </span>
+
+  <span *ngIf="textBefore" class="addon -borderleft"
+        [ngClass]="
+        {
+        'predefined' : textBefore,
+        'withBorder': withBorder,
+        'withoutBorder' : !withBorder,
+        '-flatborders': flatBorder
+        }">
+    {{textBefore}}
+  </span>
+
+  <div class="ui-wrapper-input" [ngClass]="{'-flatborders': flatBorder}" [style.height]="height">
+    <input [style.padding-right]="clearButton ? '20px' : '12px'"
+           [style.height]="height"
+           #input
+           [type]="type"
+           cdkOverlayOrigin
+           [tabindex]="tabindex"
+           [style.text-align]="textAlign"
+           [disabled]="disabled || isDisabled"
+           class="field"
+           [ngClass]="{
+             'ng-invalid': control?.errors,
+             'ng-valid': !control?.errors,
+             'ng-touched': control?.touched,
+             'ng-untouched': control?.untouched,
+             'withValidators': hasValidator,
+             'withoutValidators': !hasValidator,
+             'withBorder': withBorder,
+             'withoutBorder' : !withBorder,
+             '-borderleft': iconBefore || textBefore,
+             '-flatborders': flatBorder,
+             '-borderright': iconAfter || textAfter
+             }"
+           [attr.readonly]="readonly ? true : null"
+           [attr.required]="required ? true : null"
+           [attr.autocomplete]="autocomplete"
+           [attr.maxlength]="maxlength"
+           [attr.name]="name"
+           [placeholder]="placeholder"
+           [(ngModel)]="value"
+           (click)="onInputClick($event)"
+           (blur)="onInputBlur($event)"
+           (focus)="onInputFocus($event)">
+    <tl-icon *ngIf="clearButton && value"
+             [style.lineHeight]="height"
+             [size]="'1.5em'"
+             (click)="clearInput($event)"
+             [lib]="'ion'"
+             [style]="'ios'"
+             class="clearButton">close</tl-icon>
+  </div>
+
+  <span #afterIcon *ngIf="iconAfter"
+        (click)="onClickAddon($event, 'after')" class="addon -borderright"
+        [ngClass]="{ 'withoutBorder' : !withBorder, '-flatborders': flatBorder, '-borderright': iconAfter || textAfter }">
+    <tl-icon>{{ iconAfter }}</tl-icon>
+  </span>
+
+  <span *ngIf="textAfter" #afterText class="addon -borderright"
+        [ngClass]="{ '-predefined' : textAfter, '-flatborders': flatBorder, 'withoutBorder' : !withBorder }">{{textAfter}}</span>
+</div>

@@ -1,0 +1,52 @@
+@import "components";
+
+@mixin theme-builder($theme){
+  @include tl-accordion-theme($theme);
+  @include tl-accordion-item-theme($theme);
+  @include tl-avatar-theme($theme);
+  @include tl-autocomplete-theme($theme);
+  @include tl-badge-theme($theme);
+  @include tl-button-theme($theme);
+  @include tl-calendar-theme($theme);
+  @include tl-card-theme($theme);
+  @include tl-colorpicker-theme($theme);
+  @include tl-colorpicker-content-theme($theme);
+  @include tl-colorpicker-input-theme($theme);
+  @include tl-clockpicker-theme($theme);
+  @include tl-chatlist-theme($theme);
+  @include tl-checkbox-theme($theme);
+  @include tl-date-theme($theme);
+  @include tl-editor-theme($theme);
+  @include tl-popupmenu-theme($theme);
+  @include tl-modal-toolbar-theme($theme);
+  @include tl-datatable-theme($theme);
+  @include tl-dropdonwlist-theme($theme);
+  @include tl-form-theme($theme);
+  @include tl-input-theme($theme);
+  @include tl-listbox-theme($theme);
+  @include tl-modal-theme($theme);
+  @include tl-multiselect-theme($theme);
+  @include tl-menu-theme($theme);
+  @include tl-navigator-theme($theme);
+  @include tl-overlaylist-theme($theme);
+  @include tl-list-item-theme($theme);
+  @include tl-overlay-panel-theme($theme);
+  @include tl-panelgroup-theme($theme);
+  @include tl-permissions-theme($theme);
+  @include tl-progressbar-theme($theme);
+  @include tl-radiobutton-theme($theme);
+  @include tl-splitbutton-theme($theme);
+  @include tl-stopwatch-theme($theme);
+  @include tl-switch-theme($theme);
+  @include tl-tag-theme($theme);
+  @include tl-tabcontrol-theme($theme);
+  @include tl-textarea-theme($theme);
+  @include tl-toaster-theme($theme);
+  @include tl-toolbar-theme($theme);
+  @include tl-timepicker-theme($theme);
+  @include tl-time-available-picker-theme($theme);
+  @include tl-timeline-theme($theme);
+  @include tl-timeline-item-theme($theme);
+}
+
+

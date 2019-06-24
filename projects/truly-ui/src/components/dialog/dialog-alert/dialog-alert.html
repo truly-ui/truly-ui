@@ -1,0 +1,12 @@
+<div class="content-dialog" (keydown)="onKeyDown($event)">
+    <div class="form">
+        <p>{{message}}</p>
+    </div>
+    <div class="header-controls">
+        <tl-button [text]="textClose"
+                   mdResult="MRCLOSE"
+                   [color]="'basic'"
+                   [iconAddonBefore]="'ion ion-md-close'">
+        </tl-button>
+    </div>
+</div>

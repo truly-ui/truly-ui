@@ -1,0 +1,146 @@
+@import "../core/styles/theming/theming";
+
+@mixin _tl-multiselect-theme-schema($theme, $action) {
+
+    $danger: map-deep-get($theme, 'danger');
+    $basic: map-deep-get($theme, 'basic');
+    $primary: map_get($theme, 'primary');
+    $success: map-deep-get($theme, 'success');
+
+  .-labelTag {
+      color: map-deep-get($theme, $action, "default", "foreground");
+    }
+
+    .multiselect-wrapper{
+
+      & .selectedItem {
+        background-color: map-deep-get($primary, "default", "background") !important;
+        color: map-deep-get($primary, "default", "foreground") !important;
+      }
+
+      & .input-wrapper-multiselect {
+        border: 1px solid map-deep-get($theme, $action, "default", "border");
+        background:  map-deep-get($theme, $action, "lighter", "background");
+        -webkit-box-shadow: inset 0px 5px 7px -5px rgba(0, 0, 0, 0.10);
+        -moz-box-shadow: inset 0px 5px 7px -5px rgba(0, 0, 0, 0.10);
+        box-shadow: inset 0px 5px 7px -5px rgba(0, 0, 0, 0.10);
+      }
+
+      & .input-wrapper-multiselect.ng-disabled {
+        opacity: 0.35;
+        filter: Alpha(Opacity=70);
+        cursor: default !important;
+        background-color: map-deep-get($basic, "default", "background");
+        color: map-deep-get($basic, "default", "foreground");
+      }
+
+      & .input-wrapper-multiselect.ng-touched.invalid {
+        border: 1px solid map-deep-get($danger, "default", "border") !important;
+        background-color: rgba(map-deep-get($danger, "default", "background"), 0.2) !important;
+        outline: none;
+      }
+
+      & .input-wrapper-multiselect.withValidators.ng-touched:not(.invalid) {
+        border: 1px solid map-deep-get($success, "default", "border");
+        background-color: rgba(map-deep-get($success, "default", "background"), 0.2);
+        outline: none;
+      }
+
+      & .input-wrapper-multiselect input::placeholder {
+        color: map-deep-get($theme, $action, "lighter", "foreground");
+      }
+
+      & .input-field {
+        background: transparent;
+        color: map-deep-get($theme, $action, "lighter", "foreground");
+        &::placeholder {
+          opacity: 0.6;
+        }
+      }
+
+      & .input-empty.invalid {
+        border: 1px solid map-deep-get($danger, "default", "border") !important;
+        background-color: transparent;
+        outline: none;
+      }
+
+      & .inputFormOpenFilter {
+        border-top: 1px solid  map-deep-get($theme, $action, "default", "border");
+        border-left: 1px solid  map-deep-get($theme, $action, "default", "border");
+        border-right: 1px solid  map-deep-get($theme, $action, "default", "border");
+      }
+
+      & .select-options {
+        background-color: map-deep-get($theme, $action, "default", "background");
+        border: 1px solid rgba( map-deep-get($theme, $action, "default", "border"),0.3);
+      }
+
+      & .select-options .itens {
+        background: map-deep-get($theme, $action, "default", "background");
+        color: map-deep-get($theme, $action, "default", "foreground");
+        border-top: 1px solid rgba( map-deep-get($theme, $action, "default", "border"), 0.3);
+        &:first-child {
+          border-top: none;
+        }
+      }
+
+      & .select-options small {
+        color:  map-deep-get($theme, $action, "default", "foreground");
+      }
+
+      & .select-options .itens:hover {
+        background: map-deep-get($theme, $action, "hover", "background");
+        outline: none;
+      }
+
+      & .select-options::-webkit-scrollbar-thumb {
+        background-color:  map-deep-get($theme, $action, "default", "background");
+        outline: 1px solid map-deep-get($theme, $action, "default", "border");
+      }
+
+      & .group-tags {
+        .tag {
+          background-color: map-deep-get($primary, "default", "background");
+        }
+        .tag.selected {
+          background-color: map-deep-get($primary, "darker", "background");
+        }
+        span b {
+          color: map-deep-get($theme, $action, "default", "foreground");
+          border-left: 1px solid map-deep-get($theme, $action, "default", "foreground");
+
+        }
+      }
+    }
+  }
+
+@mixin tl-multiselect-theme( $theme ) {
+
+  .tl-multiselect-container {
+
+    &.basic {
+      @include _tl-multiselect-theme-schema($theme, 'basic')
+    }
+
+    &.primary {
+      @include _tl-multiselect-theme-schema($theme, 'primary')
+    }
+
+    &.success {
+      @include _tl-multiselect-theme-schema($theme, 'success')
+    }
+
+    &.danger {
+      @include _tl-multiselect-theme-schema($theme, 'danger')
+    }
+
+    &.warning {
+      @include _tl-multiselect-theme-schema($theme, 'warning')
+    }
+
+    &.information {
+      @include _tl-multiselect-theme-schema($theme, 'information')
+    }
+
+  }
+}

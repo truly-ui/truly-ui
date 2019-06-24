@@ -1,0 +1,21 @@
+<ng-content></ng-content>
+<div class="group-radios" [style.display]="orientation == 'vertical' ? 'grid' : 'inline-flex'">
+    <div *ngFor="let item of listRadioButton.toArray()" class="radio-container" [style.padding-top]="orientation === 'vertical' ? '10px' : '0'">
+        <input #radiobutton
+               type="radio"
+               [attr.name]="name"
+               (click)="checkRadio(item, $event)"
+               [tabindex]="tabindex"
+               [attr.disabled]="item.disabled"
+               [value]="item.value"
+               (keydown)="handleKeyDown($event)"
+               (focus)="focusRadio(item)"
+               [(ngModel)]="value">
+        <span class="radio-ring" [ngClass]="{'disabled': item.disabled }"></span>
+        <span
+          [style.top]="orientation == 'vertical' ? '13px' : '3px'"
+          *ngIf="itemSelected === item"
+          [style.background-color]="colorSelected" class="radio-selected" [ngClass]="{'disabled': item.disabled}"></span>
+        <label (click)="checkRadio(item, $event)" class="-label">{{item.label}}</label>
+    </div>
+</div>

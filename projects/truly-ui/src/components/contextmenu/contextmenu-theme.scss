@@ -1,0 +1,22 @@
+@import "../core/styles/theming/theming";
+
+@mixin tl-contextmenu-theme( $theme ) {
+  $basic:   map-deep-get($theme, 'basic');
+  $primary: map-deep-get($theme, 'primary');
+
+  .ui-menu-context {
+    background: map-deep-get($basic, "default", "background");
+    border: 1px solid map-deep-get($basic, "default", "border");
+  }
+
+  .ui-item-context {
+    background: map-deep-get($basic, "default", "background");
+    color: map-deep-get($basic, "default", "foreground");
+    &:hover {
+      background-color: map-deep-get($primary, "default", "background");
+      color: map-deep-get($primary, "default", "foreground");
+    }
+  }
+
+
+}

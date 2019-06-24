@@ -1,0 +1,51 @@
+<div class="router-outlet">
+  <app-showcase-header name="Schedule" module="ScheduleModule">
+    The schedule is a form component that represents a graphical Gregorian schedule.
+  </app-showcase-header>
+  <div class="showcase">
+    <div class="row">
+      <div class="col-md-12">
+        <app-showcase-card [title]="'Showcase'" [icon]="'fas fa-desktop'">
+            <app-card>
+              <div class="col-md-12">
+                <h6>Basic</h6>
+                <tl-schedule
+                  [events]="dataSource"
+                  [isLoading]="isLoading"
+                  [slotSettings]="slotSettings"
+                  [workScale]="workScale"
+                  [showNowIndicator]="false"
+                  [statusConfig]="statusConfig"
+                  (eventContextmenu)="onEventContextmenu($event)"
+                  (rowDbClick)="onRowClick($event)"
+                  (changeDate)="onChangeDate( $event )"
+                  (newEventClick)="onNewEventClick( $event )"
+                  (eventDbClick)="onEventDbClick($event)"
+                >
+                </tl-schedule>
+
+
+                <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-schedule></tl-schedule>
+</textarea>
+              </div>
+              <div class="col-md-6">
+
+              </div>
+            </app-card>
+        </app-showcase-card>
+      </div>
+    </div>
+    <app-showcase-card [title]="'Properties'" [icon]="'fas fa-clipboard-list'">
+      <app-card>
+        <app-showcase-table-properties [data]="dataTableProperties"></app-showcase-table-properties>
+      </app-card>
+    </app-showcase-card>
+    <app-showcase-card [title]="'Events'" [icon]="'ion ion-ios-radio'">
+      <app-card>
+        <app-showcase-table-events [data]="dataEvents"></app-showcase-table-events>
+      </app-card>
+    </app-showcase-card>
+  </div>
+</div>

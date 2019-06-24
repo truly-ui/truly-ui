@@ -1,0 +1,21 @@
+<div [class]="'ui-wrapper-accordion-item ' + getColor()">
+  <div class="ui-accordion-item-header"
+       [ngClass]="{'opened': opened, 'disabled': disabled}"
+       [style.height]="heightHeader"
+       [style.line-height]="heightHeader"
+       [style.border-bottom]="opened ? '1px solid #DCDCDC' : 0"
+       (click)="toggle()">
+    <div class="ui-accordion-arrow">
+      <tl-icon [lib]="'ion'" [style]="'ios'" [icon]="(!opened) ? 'arrow-forward' : 'arrow-down'"></tl-icon>
+    </div>
+    <span>{{title}}</span>
+  </div>
+
+  <div #panel
+       [style.max-height.px]="opened ? panel.scrollHeight : 0"
+       [style.display]="'block' ? opened : 'none'"
+       class="ui-accordion-item-content">
+      <ng-content></ng-content>
+  </div>
+
+</div>

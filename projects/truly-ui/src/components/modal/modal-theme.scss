@@ -1,0 +1,59 @@
+@import "../core/styles/theming/theming";
+
+
+@mixin _tl-modal-theme-scheme( $theme, $action ){
+
+  & .header {
+    background-color: map-deep-get($theme, $action, "default", "background");
+    outline: 1px solid map-deep-get($theme, $action, "default", "background");
+  }
+  & .header .-active {
+    color:  map-deep-get($theme, $action, "default", "foreground");
+  }
+  > .header .-inactive {
+    color: rgba( map-deep-get($theme, $action, "default", "foreground"), 0.5);
+  }
+  & .header .controls .control-item:hover:not(.disabled) {
+    background-color: map-deep-get($theme, $action, "hover", "background");
+    color:  map-deep-get($theme, $action, "hover", "foreground");
+    border-color: map-deep-get($theme, $action, 'hover', "border");
+  }
+}
+
+
+@mixin tl-modal-theme($theme) {
+
+  .tl-modal-container {
+    background-color: map-deep-get($theme, 'basic', "default", "background");
+    color: map-deep-get($theme,'basic', "default", "foreground");
+    border: 1px solid map-deep-get($theme, 'basic', "default", "border");
+
+    &.basic {
+      @include _tl-modal-theme-scheme($theme, 'basic')
+    }
+
+    &.primary {
+      @include _tl-modal-theme-scheme($theme, 'primary')
+    }
+
+    //&.secondary {
+    //  @include _tl-button-theme-schema($theme,'secondary')
+    //}
+
+    &.success {
+      @include _tl-modal-theme-scheme($theme, 'success')
+    }
+
+    &.danger {
+      @include _tl-modal-theme-scheme($theme, 'danger')
+    }
+
+    &.warning {
+      @include _tl-modal-theme-scheme($theme, 'warning')
+    }
+
+    &.information {
+      @include _tl-modal-theme-scheme($theme, 'information')
+    }
+  }
+}

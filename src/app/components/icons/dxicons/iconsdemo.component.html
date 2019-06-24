@@ -1,0 +1,48 @@
+<div class="router-outlet">
+  <app-showcase-header name="Icons | DXIcons" module="IconsModule">
+    The Truly-UI Icons unites the main packages of icons available on the web: DXIcons, Font-Awesome, Ionicons.
+  </app-showcase-header>
+  <div class="showcase">
+    <div class="row">
+      <div class="col-md-12">
+        <app-showcase-card [title]="'Showcase'" [icon]="'fas fa-desktop'">
+          <app-card>
+            <div class="col-md-6 offset-md-3">
+              <tl-input
+                [placeholder]="'Search Icon'"
+                [clearButton]="true"
+                [(ngModel)]="filter"
+                [autocomplete]="'off'">
+              </tl-input>
+            </div>
+            <div class="col-md-3">
+              <tl-switch [label]="'Show Cheatsheet'" [labelSize]="'147px'" [color]="'primary'" [checked]="cheatsheet" (toggle)="toggleCheatsheet()"></tl-switch>
+            </div>
+            <div class="col-md-12">
+              <h6>Basic</h6>
+              <ul class="row">
+                <li class="col-md-2" *ngFor="let icon of filterIcon(dataIcons)">
+                  <div class="shadow-hover"
+                       (click)="copyIcon(icon)"
+                       (mouseover)="onMouseOver(icon)"
+                       (mouseleave)="onMouseLeave(icon)">
+                    <i class="dx-icon dx-icon-{{ icon }}"></i>
+                    <span *ngIf="!cheatsheet">{{ icon }}</span>
+                    <span *ngIf="cheatsheet">dx-icon dx-icon-{{ icon }}</span>
+                    <div class="copy-message" [@enterAnimation]="saved === icon" *ngIf="saved === icon">
+                      <tl-icon [lib]="'ion'" [size]="'14px'" [color]="'#5EC791'">done-all</tl-icon>
+                    </div>
+                    <div class="copy-message" [@enterAnimation]="copy === icon" *ngIf="copy === icon">
+                      <tl-icon [lib]="'ion'" [size]="'14px'" [color]="'#333333'">copy</tl-icon>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </app-card>
+        </app-showcase-card>
+        <input #inputCopy type="text" [ngModel]="outputIcon" style="width:1px;height:1px;border:0;">
+      </div>
+    </div>
+  </div>
+</div>

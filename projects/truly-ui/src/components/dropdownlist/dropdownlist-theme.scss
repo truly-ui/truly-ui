@@ -1,0 +1,52 @@
+@import "../core/styles/theming/theming";
+
+@mixin tl-dropdonwlist-theme($theme) {
+
+  $basic: map-deep-get($theme, 'basic');
+  $danger: map-deep-get($theme, 'danger');
+  $primary: map-deep-get($theme, 'primary');
+
+  .ui-dropdown-box {
+
+    .ui-dropdown-icon.ng-invalid {
+      color: rgba(map-deep-get($danger, "default", "background"), 0.5) !important;
+    }
+
+    .ui-dropdown {
+      background: map-deep-get($basic, "default", "background");
+      border: 1px solid map-deep-get($basic, "default", "border");
+
+      &:hover {
+        background-color: map-deep-get($basic, "default", "background");
+      }
+
+      &:focus {
+        border-color: #40a9ff;
+        outline: 0;
+        box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+        border-right-width: 1px !important;
+      }
+
+      &:active {
+        background-color: map-deep-get($basic, "default", "background");
+      }
+
+      &.ng-invalid {
+        border: 1px solid rgba(map-deep-get($danger, "default", "background"), 0.5) !important;
+        color: rgba(map-deep-get($danger, "default", "background"), 0.5) !important;
+      }
+
+      > .select.-hasValidation.ng-invalid.ng-touched:not(dropdown) {
+        border: 1px solid map-deep-get($danger, "default", "border");
+        background-color: #FFF1F1;
+      }
+
+      > .select.-hasValidation.ng-valid[required], .select.-hasValidation.ng-valid.required {
+        border: 1px solid map-deep-get($primary, "default", "border");
+        background-color: map-deep-get($primary, "default", "background");
+      }
+
+    }
+  }
+
+}

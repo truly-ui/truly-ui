@@ -1,0 +1,7 @@
+@import "../core/styles/theming/theming";
+
+@mixin tl-accordion-theme($theme) {
+
+  $basic: map-deep-get($theme, 'basic');
+
+}

@@ -1,0 +1,26 @@
+<div [class]="'container-wrapper '+ color">
+     <span [style.background]="arrowsColor"
+           [style.lineHeight]="height"
+           (click)="handleArrowLeft()" *ngIf="container.scrollLeft > 0" class="arrow-left">
+       <tl-icon [lib]="'ion'" [style]="'ios'">arrow-back</tl-icon>
+     </span>
+    <div #container [style.height]="height" [style.background-color]="containerColor" class="container-modals">
+      <div #wrapper class="wrapper-container-modals" [style.line-height]="height" [ngStyle]="
+      {position: 'absolute'}">
+          <div class="container-modal-box"
+               [style.width]="modalBoxWidth + 'px'"
+               [style.height]="'calc(' + height  + ' - 6px)'"
+               [style.lineHeight]="'calc(' + height + ' - 6px)'"
+               *ngFor="let item of modalService.componentList; let i = index" (click)="showWindow(item.modal)"
+               [style.opacity]="item?.modal === modalService?.activeModal ? 1 : 0.7">
+              <span class="ui-container-item ui-container-icon"><tl-icon>{{ item?.modal?.instance?.icon }}</tl-icon></span>
+              <span class="ui-container-item ui-container-text">{{item?.modal?.instance?.title}}</span>
+          </div>
+      </div>
+    </div>
+    <span [style.background]="arrowsColor"
+          [style.lineHeight]="height"
+          [@onCreateElement]="true" (click)="handleArrowRight()" *ngIf="isScrolling" class="arrow-right">
+      <tl-icon [lib]="'ion'" [style]="'ios'">arrow-forward</tl-icon>
+    </span>
+</div>

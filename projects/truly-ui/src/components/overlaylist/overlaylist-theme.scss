@@ -1,0 +1,62 @@
+@import "../core/styles/theming/theming";
+
+@mixin tl-overlaylist-theme($theme) {
+
+  $basic: map-deep-get($theme, 'basic');
+  $danger: map-deep-get($theme, 'danger');
+  $primary: map-deep-get($theme, 'primary');
+
+  .dropdown-list-wrapper-select {
+    > .dropdown-list-select {
+      border: 1px solid map-deep-get($basic, "default", "border");
+      background-color: map-deep-get($basic, "default", "background");
+      color: map-deep-get($basic, "default", "foreground");
+      .selected {
+        background-color: map-deep-get($primary, "default", "background");
+        color: map-deep-get($primary, "default", "foreground");
+        /deep/ span {
+          background: transparent !important;
+        }
+      }
+      > li {
+        color: map-deep-get($basic, "default", "foreground");
+      }
+      > li:hover {
+        background-color: map-deep-get($primary, "default", "background");
+        color: map-deep-get($primary, "default", "foreground");
+      }
+      > li:focus {
+        background-color: map-deep-get($primary, "default", "background");
+        color: map-deep-get($primary, "default", "foreground");
+      }
+      > li:active {
+        background-color: map-deep-get($basic, "default", "background");
+        color: map-deep-get($basic, "default", "foreground");
+      }
+    }
+    > .dropdown-list-select::-webkit-scrollbar-thumb {
+      background-color: map-deep-get($primary, "default", "background");
+    }
+    > .-placeholder {
+      color: map-deep-get($basic, "default", "foreground");
+      background-color: map-deep-get($basic, "default", "background");
+      border: 1px solid map-deep-get($basic, "default", "border");
+    }
+    > .-placeholder:focus {
+      background-color: map-deep-get($primary, "default", "background");
+      color: map-deep-get($primary, "default", "foreground");
+    }
+    > .search-input {
+      background-color: map-deep-get($basic, "darker", "background");
+      border: 1px solid map-deep-get($basic, "default", "border");
+      border-bottom: 0;
+    }
+  }
+
+  > .disabled::placeholder, .disabled {
+    opacity: 0.45;
+    color: #000000;
+  }
+
+}
+

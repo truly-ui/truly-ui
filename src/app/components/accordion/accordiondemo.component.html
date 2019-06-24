@@ -1,0 +1,197 @@
+<div class="router-outlet">
+  <app-showcase-header name="Accordion" module="AccordionModule">
+    Displays collapsible content panels for presenting information in a limited amount of space.
+  </app-showcase-header>
+  <div class="showcase">
+    <div class="row">
+      <div class="col-md-12">
+        <app-showcase-card [title]="'Showcase'" [icon]="'fas fa-desktop'">
+          <app-card>
+            <div class="col-md-12">
+              <h6>Basic Usage</h6>
+              <tl-accordion [singleOpened]="true">
+                <tl-accordion-item [title]="'Title of the first content'">
+                  <h4>Content 1</h4>
+                  <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley
+                    of type and scrambled it to make a type specimen book. It has survived not only five centuries, but
+                    also the leap
+                    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                    the release of
+                    Letraset sheets containing Lorem Ipsum passages, a
+                    nd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+                    Ipsum.</p>
+                </tl-accordion-item>
+                <tl-accordion-item [opened]="true" [title]="'Title of the second content'">
+                  <h4>Content 2</h4>
+                  <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley
+                    of type and scrambled it to make a type specimen book. It has survived not only five centuries, but
+                    also the leap
+                    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                    the release of
+                    Letraset sheets containing Lorem Ipsum passages, a
+                    nd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+                    Ipsum.</p>
+                </tl-accordion-item>
+                <tl-accordion-item [disabled]="true" [title]="'Title of the third content'">
+                  <h4>Content 3</h4>
+                  <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley
+                    of type and scrambled it to make a type specimen book. It has survived not only five centuries, but
+                    also the leap
+                    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                    the release of
+                    Letraset sheets containing Lorem Ipsum passages, a
+                    nd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+                    Ipsum.</p>
+                </tl-accordion-item>
+              </tl-accordion>
+              <div class="spacer"></div>
+              <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-accordion [singleOpened]="true">
+  <tl-accordion-item [title]="'Title of the first content'">
+    <!--Content 1-->
+  </tl-accordion-item>
+  <tl-accordion-item [title]="'Title of the second content'" [opened]="true">
+    <!--Content 2-->
+  </tl-accordion-item>
+  <tl-accordion-item [title]="'Title of the third content'">
+    <!--Content 3-->
+  </tl-accordion-item>
+</tl-accordion>
+</textarea>
+            </div>
+          </app-card>
+          <app-card>
+            <div class="col-md-12">
+              <h6>Nested Accordions</h6>
+              <tl-accordion [singleOpened]="true">
+                <tl-accordion-item [opened]="true" [title]="'Title of the first content'">
+                  <h4>Content 1</h4>
+                  <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley
+                    of type and scrambled it to make a type specimen book. It has survived not only five centuries, but
+                    also the leap
+                    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                    the release of
+                    Letraset sheets containing Lorem Ipsum passages, a
+                    nd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+                    Ipsum.</p>
+                </tl-accordion-item>
+                <tl-accordion-item [title]="'Title of the second content'">
+                  <div style="padding: 10px">
+                    <tl-accordion [singleOpened]="true">
+                      <tl-accordion-item [title]="'Title of the first content'">
+                        <h4>Content 1</h4>
+                        <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                          printer took a galley
+                          of type and scrambled it to make a type specimen book. It has survived not only five
+                          centuries, but
+                          also the leap
+                          into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                          with
+                          the release of
+                          Letraset sheets containing Lorem Ipsum passages, a
+                          nd more recently with desktop publishing software like Aldus PageMaker including versions of
+                          Lorem
+                          Ipsum.</p>
+                      </tl-accordion-item>
+                      <tl-accordion-item [opened]="true" [title]="'Title of the second content'">
+                        <h4>Content 2</h4>
+                        <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                          printer took a galley
+                          of type and scrambled it to make a type specimen book. It has survived not only five
+                          centuries, but
+                          also the leap
+                          into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                          with
+                          the release of
+                          Letraset sheets containing Lorem Ipsum passages, a
+                          nd more recently with desktop publishing software like Aldus PageMaker including versions of
+                          Lorem
+                          Ipsum.</p>
+                      </tl-accordion-item>
+                      <tl-accordion-item [disabled]="true" [title]="'Title of the third content'">
+                        <h4>Content 3</h4>
+                        <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                          printer took a galley
+                          of type and scrambled it to make a type specimen book. It has survived not only five
+                          centuries, but
+                          also the leap
+                          into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                          with
+                          the release of
+                          Letraset sheets containing Lorem Ipsum passages, a
+                          nd more recently with desktop publishing software like Aldus PageMaker including versions of
+                          Lorem
+                          Ipsum.</p>
+                      </tl-accordion-item>
+                    </tl-accordion>
+                  </div>
+                </tl-accordion-item>
+                <tl-accordion-item [title]="'Title of the third content'">
+                  <h4>Content 3</h4>
+                  <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley
+                    of type and scrambled it to make a type specimen book. It has survived not only five centuries, but
+                    also the leap
+                    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                    the release of
+                    Letraset sheets containing Lorem Ipsum passages, a
+                    nd more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+                    Ipsum.</p>
+                </tl-accordion-item>
+              </tl-accordion>
+              <div class="spacer"></div>
+              <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-accordion [singleOpened]="true">
+  <tl-accordion-item [title]="'Title of the first content'" [opened]="true">
+    <!--Content 1-->
+  </tl-accordion-item>
+  <tl-accordion-item [title]="'Title of the second content'">
+    <!--Content 2-->
+    <tl-accordion [singleOpened]="true">
+      <tl-accordion-item [title]="'Title of the first content'">
+       <!--content-->
+      </tl-accordion-item>
+      <tl-accordion-item [opened]="true" [title]="'Title of the second content'">
+       <!--content-->
+      </tl-accordion-item>
+      <tl-accordion-item [disabled]="true" [title]="'Title of the third content'">
+       <!--content-->
+      </tl-accordion-item>
+    </tl-accordion>
+  </tl-accordion-item>
+  <tl-accordion-item [title]="'Title of the third content'">
+    <!--Content 3-->
+  </tl-accordion-item>
+</tl-accordion>
+</textarea>
+            </div>
+          </app-card>
+        </app-showcase-card>
+      </div>
+    </div>
+    <div class="setup">
+      <app-showcase-card [title]="'Properties'" [icon]="'fas fa-clipboard-list'">
+        <app-card>
+          <app-showcase-table-properties [data]="dataTableProperties"></app-showcase-table-properties>
+        </app-card>
+      </app-showcase-card>
+      <!--<app-showcase-card [title]="'Events'" [icon]="'ion ion-ios-radio'">
+        <app-card>
+          <app-showcase-table-events [data]="dataEvents"></app-showcase-table-events>
+        </app-card>
+      </app-showcase-card>-->
+    </div>
+  </div>
+</div>

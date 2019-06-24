@@ -1,0 +1,43 @@
+@import "../core/styles/theming/theming";
+
+@mixin tl-tabcontrol-theme($theme) {
+
+  $basic:   map-deep-get($theme, 'basic');
+  $primary:   map-deep-get($theme, 'primary');
+
+  .wrapper-tabcontrol {
+
+    >.line-separator:after {
+      background: map-deep-get($basic, "default", "border") !important;
+    }
+
+    >.tab-panel-buttons li {
+      color: map-deep-get($basic, "default", "foreground");
+      background: map-deep-get($basic, "default", "background");
+      border: 1px solid map-deep-get($basic, "default", "border");
+      border-right: 0;
+    }
+
+    >.tab-panel-buttons li:last-child {
+      border-right: 1px solid map-deep-get($basic, "default", "border");
+    }
+  }
+
+  .tab-wrapper {
+    background: map-deep-get($basic, "default", "background");
+    border-left: 1px solid map-deep-get($basic, "default", "border");
+    border-right: 1px solid map-deep-get($basic, "default", "border");
+    border-bottom: 1px solid map-deep-get($basic, "default", "border");
+  }
+
+  .tab-selected {
+    border-bottom: 0 !important;
+    background: map-deep-get($basic, "lighter", "background") !important;
+    border-top: 1px solid map-deep-get($primary, "default", "background") !important;
+  }
+
+  .tab-wrapper-selected{
+    background: map-deep-get($basic, "lighter", "background")
+  }
+
+}

@@ -1,0 +1,94 @@
+@import "../core/styles/theming/theming";
+
+@mixin tl-datatable-theme($theme) {
+
+  $basic:   map-deep-get($theme, 'basic');
+  $primary: map-deep-get($theme, 'primary');
+
+  //ALL
+  .tl-datatable-box{
+    border-left: 1px solid map-deep-get($basic, "default", "border");
+    border-top: 1px solid map-deep-get($basic, "default", "border");
+    border-bottom: 1px solid map-deep-get($basic, "default", "border");
+  }
+
+  .ui-cel{
+    border-right: 1px solid map-deep-get($basic, "default", "border");
+  }
+
+  //HEADER
+  .ui-datatable-header-wrap{
+    border-right: 1px solid map-deep-get($basic, "default", "border");
+  }
+
+  .ui-datatable-table-head{
+    color: map-deep-get($basic, "darker", "foreground");
+    > .ui-row{
+      background: map-deep-get($basic, "darker", "background");
+    }
+    > .ui-row .ui-sort-indicator {
+      color: map-deep-get($basic, "default", "foreground");
+    }
+    > .ui-row .ui-cel{
+      border-right: 1px solid map-deep-get($basic, "default", "border");
+      border-bottom: 1px solid map-deep-get($basic, "default", "border");
+    }
+  }
+
+  //SCROLLABLE MODE
+  .ui-datatable-scrollable{
+    border-right: 1px solid map-deep-get($basic, "default", "border");
+  }
+
+  .ui-box-notfound-records{
+      background: map-deep-get($basic, "default", "background");
+      color: map-deep-get($basic, "default", "foreground");
+  }
+
+  .ui-datatable-content-body{
+    > .ui-row{
+      background:  map-deep-get($basic, "darker", "background");
+      color: rgba( map-deep-get($basic, "darker", "foreground"),0.8);
+      cursor: default;
+      user-select: none;
+    }
+
+    > .ui-row:nth-child(odd){
+      background: map-deep-get($basic, "lighter", "background");
+      color: rgba(map-deep-get($basic, "lighter", "foreground"),0.8);
+    }
+
+    > .ui-row:last-child{
+      border-bottom: 1px solid map-deep-get($basic, "default", "border");
+    }
+
+    > .ui-row .ui-cel{
+      border-right: 1px solid map-deep-get($basic, "default", "border");
+    }
+
+    > .ui-row .ui-cel:last-child{
+      border-right: 1px solid map-deep-get($basic, "default", "border");
+    }
+
+    > .ui-selected-row{
+      background: rgba(map-deep-get($primary, "default", "background"),0.6) !important;
+      color: map-deep-get($primary, "default", "foreground") !important;
+    }
+
+    > .ui-row:focus{
+      background: map-deep-get($primary, "default", "background") !important;
+      color: map-deep-get($primary, "default", "foreground") !important;
+    }
+
+    > .ui-row:hover:not(.ui-selected-row){
+      background: map-deep-get($basic, "lighter", "background");
+    }
+  }
+
+  //NORMAL MODE
+  .ui-datatable-normal{
+    border-right: 1px solid map-deep-get($basic, "default", "border");
+  }
+}
+
+

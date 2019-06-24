@@ -1,0 +1,21 @@
+<div class="content-dialog" (keydown)="onKeyDown($event)">
+    <div class="form">
+        <p>{{message}}</p>
+    </div>
+    <div class="controls">
+        <tl-button [text]="textOk"
+                   mdResult="MROK"
+                   [color]="'basic'"
+                   [iconAddonBefore]="'ion ion-md-close'">
+        </tl-button>
+    </div>
+    <div title="Show More" class="arrow-log-error" (click)="open(errorlog)" >
+        <tl-icon [lib]="'ion'" [style]="'ios'" [icon]="(errorlog) ? 'ion ion-ios-arrow-up' : 'ion ion-ios-arrow-down'"></tl-icon>
+    </div>
+    <div [@enterAnimation]="errorlog" *ngIf="errorlog" class="error-log">
+        <pre>{{exceptionBoxDescription}}: {{exceptionName}}</pre>
+        <code *ngIf="exceptionMessage">
+           {{exceptionMessage}}
+        </code>
+    </div>
+</div>

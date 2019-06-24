@@ -1,0 +1,72 @@
+@import "../core/styles/theming/theming";
+
+@mixin checkbox-color($theme, $action) {
+  background-color: map-deep-get($theme, $action, "checked", "background");
+  border: 1px solid map-deep-get($theme, $action, "checked", "border");
+}
+
+@mixin _tl-checkbox-theme-schema( $theme, $action ) {
+
+  $basic: map-deep-get($theme, 'basic');
+
+  svg {
+    stroke: map-deep-get($theme, $action, "checked", "foreground");
+    &:before {
+      @include checkbox-color($theme, $action);
+    }
+    &:hover span:first-child {
+      @include checkbox-color($theme, $action);
+    }
+  }
+
+  .ui-check-input:indeterminate + .cbx {
+    span {
+      &:first-child {
+        @include checkbox-color($theme, $action);
+      }
+    }
+  }
+
+  .ui-check-input:checked + .cbx {
+    span {
+      &:first-child {
+        @include checkbox-color($theme, $action);
+      }
+    }
+  }
+
+}
+
+
+@mixin tl-checkbox-theme($theme) {
+
+  .check-container {
+    &.basic {
+      @include _tl-checkbox-theme-schema($theme, 'basic')
+    }
+
+    &.primary {
+      @include _tl-checkbox-theme-schema($theme, 'primary')
+    }
+
+    //&.secondary {
+    //  @include _tl-checkbox-theme-schema($theme,'secondary')
+    //}
+
+    &.success {
+      @include _tl-checkbox-theme-schema($theme, 'success')
+    }
+
+    &.danger {
+      @include _tl-checkbox-theme-schema($theme, 'danger')
+    }
+
+    &.warning {
+      @include _tl-checkbox-theme-schema($theme, 'warning')
+    }
+
+    &.information {
+      @include _tl-checkbox-theme-schema($theme, 'information')
+    }
+  }
+}

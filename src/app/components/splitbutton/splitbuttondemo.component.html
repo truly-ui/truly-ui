@@ -1,0 +1,97 @@
+<div class="router-outlet">
+  <app-showcase-header name="SplitButton" module="SplitButtonModule">
+    SplitButton is a button with a list of actions. See below.
+  </app-showcase-header>
+    <div class="row">
+        <div class="col-md-12">
+          <app-showcase-card [title]="'Showcase'" [icon]="'fas fa-desktop'">
+            <app-card>
+              <div class="col-md-6">
+                <h6>Basic</h6>
+                <tl-split-button [text]="'Button'" (buttonClick)="onButtonClick($event)">
+                  <tl-split-button-action [label]="'Action 1'"></tl-split-button-action>
+                  <tl-split-button-action [label]="'Action 2'"></tl-split-button-action>
+                  <tl-split-button-action [label]="'Action 3'"></tl-split-button-action>
+                </tl-split-button>
+                <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-split-button [text]="'Button'" (buttonClick)="onButtonClick($event)">
+  <tl-split-button-action [label]="'Action 1'"></tl-split-button-action>
+  <tl-split-button-action [label]="'Action 2'"></tl-split-button-action>
+  <tl-split-button-action [label]="'Action 3'"></tl-split-button-action>
+</tl-split-button>
+</textarea>
+              </div>
+              <div class="col-md-6">
+                <h6>With Action Icons</h6>
+                <tl-split-button [text]="'Button'">
+                  <tl-split-button-action [label]="'Action 1'" [icon]="'fas fa-sync-alt'"></tl-split-button-action>
+                  <tl-split-button-action [label]="'Action 2'"></tl-split-button-action>
+                  <tl-split-button-action [label]="'Action 3'" [icon]="'fas fa-chart-line'"></tl-split-button-action>
+                </tl-split-button>
+                <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-split-button [text]="'Button'">
+  <tl-split-button-action [label]="'Action 1'" [icon]="'fas fa-sync-alt'"></tl-split-button-action>
+  <tl-split-button-action [label]="'Action 2'"></tl-split-button-action>
+  <tl-split-button-action [label]="'Action 3'" [icon]="'fas fa-chart-line'"></tl-split-button-action>
+</tl-split-button>
+</textarea>
+              </div>
+            </app-card>
+            <app-card>
+              <div class="col-md-6">
+                <h6>With Action Separator</h6>
+                <tl-split-button [text]="'Button'">
+                  <tl-split-button-action [label]="'Action 1'" [separator]="true"></tl-split-button-action>
+                  <tl-split-button-action [label]="'Action 2'"></tl-split-button-action>
+                  <tl-split-button-action [label]="'Action 3'" [separator]="true"></tl-split-button-action>
+                  <tl-split-button-action [label]="'Action 4'"></tl-split-button-action>
+                </tl-split-button>
+                <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-split-button [text]="'Button'">
+  <tl-split-button-action [label]="'Action 1'" [separator]="true"></tl-split-button-action>
+  <tl-split-button-action [label]="'Action 2'"></tl-split-button-action>
+  <tl-split-button-action [label]="'Action 3'" [separator]="true"></tl-split-button-action>
+  <tl-split-button-action [label]="'Action 4'"></tl-split-button-action>
+</tl-split-button>
+</textarea>
+              </div>
+              <div class="col-md-6">
+                <h6>With Click Event</h6>
+                <tl-split-button [text]="'Button'" (click)="callBackDemo($event)">
+                  <tl-split-button-action [label]="'Action 1'" (click)="callBackDemo($event)"></tl-split-button-action>
+                  <tl-split-button-action [label]="'Action 2'" (click)="callBackDemo($event)"></tl-split-button-action>
+                  <tl-split-button-action [label]="'Action 3'" (click)="callBackDemo($event)"></tl-split-button-action>
+                </tl-split-button>
+                <div class="spacer"></div>
+                <textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-split-button [text]="'Button'" (click)="callBackDemo($event)">
+  <tl-split-button-action [label]="'Action 1'" (click)="callBackDemo($event)"></tl-split-button-action>
+  <tl-split-button-action [label]="'Action 2'" (click)="callBackDemo($event)"></tl-split-button-action>
+  <tl-split-button-action [label]="'Action 3'" (click)="callBackDemo($event)"></tl-split-button-action>
+</tl-split-button>
+</textarea>
+              </div>
+            </app-card>
+
+          </app-showcase-card>
+        </div>
+      </div>
+  <app-showcase-card [title]="'Properties'" [icon]="'fas fa-clipboard-list'">
+    <app-card>
+      <h6>tl-split-button</h6>
+      <app-showcase-table-properties [data]="dataTableProperties"></app-showcase-table-properties>
+    </app-card>
+    <app-card>
+      <h6>tl-split-button-action</h6>
+      <app-showcase-table-properties [data]="dataTableProperties2"></app-showcase-table-properties>
+    </app-card>
+  </app-showcase-card>
+  <app-showcase-card [title]="'Events'" [icon]="'ion ion-ios-radio'">
+    <app-card>
+      <h4><code>All <b>Angular Supported Events</b> can be used on this component.</code></h4>
+    </app-card>
+  </app-showcase-card>
+</div>

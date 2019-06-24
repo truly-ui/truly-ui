@@ -1,0 +1,75 @@
+<div class="router-outlet">
+  <app-showcase-header name="Input Mask " module="InputModule">
+    Mask's are very common, that's why we bring it so easy to set up.
+  </app-showcase-header>
+  <div class="showcase">
+    <div class="row">
+      <div class="col-md-12">
+        <app-showcase-card [title]="'Showcase'" [icon]="'fas fa-desktop'">
+          <app-card>
+            <div class="col-md-12">
+              <span>Basic</span>
+              <tl-input [mask]="{mask: '00/00/0000'}" [(ngModel)]="basic"></tl-input>
+              <app-showcase-returned-value [value]="basic"></app-showcase-returned-value>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-input [mask]="{mask: '00/00/0000'}" [(ngModel)]="basic"></tl-input>
+</textarea>
+            </div>
+          </app-card>
+          <app-card>
+            <div class="col-md-6">
+              <span>Text + Number</span>
+              <tl-input
+                [mask]="{mask: 'AAA-0000', uppercase: true}"
+                [(ngModel)]="textNumber"
+                [iconBefore]="'fas fa-print'">
+              </tl-input>
+              <app-showcase-returned-value [value]="textNumber"></app-showcase-returned-value>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-input [mask]="{mask: 'AAA-0000', uppercase: true}" [(ngModel)]="textNumber" [iconBefore]="'fas fa-print'"></tl-input>
+</textarea>
+            </div>
+            <div class="col-md-6">
+              <span>Without Guides</span>
+              <tl-input
+                [mask]="{mask: 'AAA-0000', guides: false}"
+                [(ngModel)]="sGuides"
+                [iconAfter]="'fas fa-print'">
+              </tl-input>
+              <app-showcase-returned-value [value]="sGuides"></app-showcase-returned-value>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-input [mask]="{mask: 'AAA-0000', guides: false}" [(ngModel)]="sGuides" [iconAfter]="'fas fa-print'"></tl-input>
+</textarea>
+            </div>
+          </app-card>
+        </app-showcase-card>
+      </div>
+    </div>
+</div>
+  <div class="row">
+    <div class="col-md-12">
+      <app-showcase-card [title]="'Mask Pattern'" [icon]="'far fa-lightbulb'">
+        <app-card>
+          <div class="pattern">
+            <p>A - Alpha character (A-Z,a-z)</p>
+            <p>9 - Numeric character (0-9)</p>
+            <p>0 - Alpha numberic character (A-Z,a-z,0-9)</p>
+          </div>
+        </app-card>
+      </app-showcase-card>
+    </div>
+  </div>
+  <app-showcase-card [title]="'Properties'" [icon]="'fas fa-clipboard-list'">
+    <app-card>
+      <app-showcase-table-properties [data]="maskDemoProperties"></app-showcase-table-properties>
+    </app-card>
+  </app-showcase-card>
+  <app-showcase-card [title]="'Events'" [icon]="'ion ion-ios-radio'">
+    <app-card>
+      <h4><code>All <b>Angular Supported Events</b> and <b>TlInput Events</b> can be used on this Component.</code></h4>
+    </app-card>
+  </app-showcase-card>
+</div>

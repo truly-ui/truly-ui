@@ -1,0 +1,94 @@
+<div class="router-outlet">
+  <app-showcase-header name="Icons | Ionicons" module="IconsModule">
+    The Truly-UI Icons unites the main packages of icons available on the web: DXIcons, Font-Awesome, Ionicons.
+  </app-showcase-header>
+  <div class="showcase">
+    <div class="row">
+      <div class="col-md-12">
+        <app-showcase-card [title]="'Showcase'" [icon]="'fas fa-desktop'">
+          <app-card>
+            <div class="col-md-6 offset-md-3">
+              <tl-input
+                [placeholder]="'Search Icon'"
+                [clearButton]="true"
+                [(ngModel)]="filter"
+                [autocomplete]="'off'">
+              </tl-input>
+            </div>
+            <div class="col-md-3">
+              <tl-switch [label]="'Show Cheatsheet'" [labelSize]="'147px'" [color]="'primary'" [checked]="cheatsheet" (toggle)="toggleCheatsheet()"></tl-switch>
+            </div>
+            <div class="col-md-12">
+              <h6>Material Style</h6>
+              <ul class="row">
+                <li class="col-md-2" *ngFor="let icon of filterIcon(materialIcons)">
+                  <div class="shadow-hover"
+                       (click)="copyIcon(icon, 'md')"
+                       (mouseover)="onMouseOver(icon)"
+                       (mouseleave)="onMouseLeave(icon)">
+                    <i class="ion ion-md-{{ icon }}"></i>
+                    <span *ngIf="!cheatsheet">{{ icon }}</span>
+                    <span *ngIf="cheatsheet">ion ion-md-{{ icon }}</span>
+                    <div class="copy-message" [@enterAnimation]="saved === icon" *ngIf="saved === icon">
+                      <i class="ion ion-md-done-all copy"></i>
+                    </div>
+                    <div class="copy-message" [@enterAnimation]="copy === icon" *ngIf="copy === icon">
+                      <i class="ion ion-md-copy copyed"></i>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </app-card>
+          <app-card>
+            <div class="col-md-12">
+              <h6>iOS Style</h6>
+              <ul class="row">
+                <li class="col-md-2" *ngFor="let icon of filterIcon(iosIcons)">
+                  <div class="shadow-hover"
+                       (click)="copyIcon(icon, 'ios')"
+                       (mouseover)="onMouseOver(icon)"
+                       (mouseleave)="onMouseLeave(icon)">
+                    <i class="ion ion-ios-{{ icon }}"></i>
+                    <span *ngIf="!cheatsheet">{{ icon }}</span>
+                    <span *ngIf="cheatsheet">ion ion-ios-{{ icon }}</span>
+                    <div class="copy-message" [@enterAnimation]="saved === icon" *ngIf="saved === icon">
+                      <i class="ion ion-md-done-all copy"></i>
+                    </div>
+                    <div class="copy-message" [@enterAnimation]="copy === icon" *ngIf="copy === icon">
+                      <i class="ion ion-md-copy copyed"></i>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </app-card>
+          <app-card>
+            <div class="col-md-12">
+              <h6>Logos</h6>
+              <ul class="row">
+                <li class="col-md-2" *ngFor="let icon of filterIcon(logoIcons)">
+                  <div class="shadow-hover"
+                       (click)="copyIcon(icon, 'logo')"
+                       (mouseover)="onMouseOver(icon)"
+                       (mouseleave)="onMouseLeave(icon)">
+                    <i class="ion ion-logo-{{ icon }}"></i>
+                    <span *ngIf="!cheatsheet">{{ icon }}</span>
+                    <span *ngIf="cheatsheet">ion ion-logo-{{ icon }}</span>
+                    <div class="copy-message" [@enterAnimation]="saved === icon" *ngIf="saved === icon">
+                      <i class="ion ion-md-done-all copy"></i>
+                    </div>
+                    <div class="copy-message" [@enterAnimation]="copy === icon" *ngIf="copy === icon">
+                      <i class="ion ion-md-copy copyed"></i>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </app-card>
+        </app-showcase-card>
+        <input #inputCopy type="text" [ngModel]="outputIcon" style="width:1px;height:1px;border:0;">
+      </div>
+    </div>
+  </div>
+</div>

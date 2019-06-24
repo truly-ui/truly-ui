@@ -1,0 +1,70 @@
+<div class="router-outlet">
+  <app-showcase-header name="CheckBox" module="CheckBoxModule">
+    The CheckBox component allows the user to select many options.
+  </app-showcase-header>
+  <div class="showcase">
+    <div class="row">
+      <div class="col-md-12">
+        <app-showcase-card [title]="'Showcase'" [icon]="'fas fa-desktop'">
+          <app-card>
+            <div class="col-md-6">
+              <h6>Basic</h6>
+              <tl-checkbox [label]="'Option 1'"></tl-checkbox>
+              <tl-checkbox [label]="'Option 2'"></tl-checkbox>
+              <tl-checkbox [label]="'Option 3'"></tl-checkbox>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-checkbox [label]="'Option 1'"></tl-checkbox>
+<tl-checkbox [label]="'Option 2'"></tl-checkbox>
+<tl-checkbox [label]="'Option 3'"></tl-checkbox>
+</textarea>
+            </div>
+            <div class="col-md-6">
+              <h6>Pre Selected Value</h6>
+              <tl-checkbox [label]="'Option 1'"></tl-checkbox>
+              <tl-checkbox [checked]="true" [label]="'Option 2'"></tl-checkbox>
+              <tl-checkbox [label]="'Option 3'"></tl-checkbox>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-checkbox [label]="'Option 1'"></tl-checkbox>
+<tl-checkbox [checked]="true" [label]="'Option 2'"></tl-checkbox>
+<tl-checkbox [label]="'Option 3'"></tl-checkbox>
+</textarea>
+            </div>
+          </app-card>
+          <app-card>
+            <div class="col-md-12">
+              <h6>Custom Color Checkbox</h6>
+              <tl-checkbox [label]="'Option 1'" [color]="'basic'" [checked]="true" ></tl-checkbox>
+              <tl-checkbox [label]="'Option 2'" [color]="'primary'" [checked]="true"></tl-checkbox>
+              <tl-checkbox [label]="'Option 3'" [color]="'warning'" [checked]="true"></tl-checkbox>
+              <tl-checkbox [label]="'Option 4'" [color]="'danger'" [checked]="true"></tl-checkbox>
+              <tl-checkbox [label]="'Option 5'" [color]="'success'" [checked]="true"></tl-checkbox>
+              <tl-checkbox [label]="'Option 6'" [color]="'information'" [checked]="true"></tl-checkbox>
+              <div class="spacer"></div>
+<textarea highlight-js [options]="{'tabReplace': ''}" [lang]="'html'">
+<tl-checkbox [label]="'Option 1'" [color]="'basic'" [checked]="true" ></tl-checkbox>
+<tl-checkbox [label]="'Option 2'" [color]="'primary'"></tl-checkbox>
+<tl-checkbox [label]="'Option 3'" [color]="'warning'"></tl-checkbox>
+<tl-checkbox [label]="'Option 4'" [color]="'danger'"></tl-checkbox>
+<tl-checkbox [label]="'Option 5'" [color]="'success'"></tl-checkbox>
+<tl-checkbox [label]="'Option 6'" [color]="'information'"></tl-checkbox>
+</textarea>
+            </div>
+          </app-card>
+        </app-showcase-card>
+      </div>
+    </div>
+  </div>
+  <app-showcase-card [title]="'Properties'" [icon]="'fas fa-clipboard-list'">
+    <app-card>
+      <app-showcase-table-properties [data]="dataTableProperties"></app-showcase-table-properties>
+    </app-card>
+  </app-showcase-card>
+  <app-showcase-card [title]="'Events'" [icon]="'ion ion-ios-radio'">
+    <app-card>
+      <h4><code>All <b>Angular Supported Events</b> can be used on this component.</code></h4>
+      <app-showcase-table-events [data]="events"></app-showcase-table-events>
+    </app-card>
+  </app-showcase-card>
+</div>

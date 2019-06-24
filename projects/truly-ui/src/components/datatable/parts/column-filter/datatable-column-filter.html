@@ -1,0 +1,37 @@
+<ng-template ngFor let-column let-index [ngForOf]="tlColumnFilter">
+    <th class="ui-cel ui-filter-cel">
+        <div class="ui-filter">
+            <div class="ui-dropdown"
+                 *ngIf="column?.showFilterOptions && column?.filterOptions.length"
+                 [ngClass]="{'-without-dropdown': !column?.showFilterOptions}">
+
+
+              <tl-dropdown-icon
+                *ngIf="column?.showFilter"
+                [data]="column?.filterOptions"
+                [widthItems]="'185px'"
+                [heightItems]="'25px'"
+                [keyIcon]="'icon'"
+                [keyText]="'description'"
+                [keyValue]="'valueItem'"
+                [defaultOptionText]="dropdownResetPlaceholder"
+                [ngModel]="filters.matchMode[column.field]"
+                (ngModelChange)="onChangeFilter(filters.matchMode[column.field] = $event)">
+              </tl-dropdown-icon>
+
+            </div>
+            <div  class="ui-input">
+                <tl-input *ngIf="column?.showFilter"
+                          [clearButton]="true"
+                          [height]="'23px'"
+                          [ngModel]="filters.value[column.field]"
+                          (ngModelChange)="onChangeFilter(filters.value[column.field] = $event)"
+                          [placeholder]="filterPlaceholder"
+                          [type]="column?.type" >
+                </tl-input>
+            </div>
+        </div>
+    </th>
+</ng-template>
+
+

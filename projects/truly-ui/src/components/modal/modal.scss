@@ -1,0 +1,66 @@
+.tl-modal-container {
+    margin: 0 auto;
+    padding: 0 auto;
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    box-sizing: content-box;
+    border-radius: 3px;
+    cursor: default;
+    border-top: 0;
+
+    > .header {
+      display: flex;
+      user-select: none;
+      height: 34px;
+    }
+
+    > .header .ui-title {
+      text-align: left;
+      line-height: 34px;
+      user-select: none;
+      font-family: "Segoe UI", Lato, 'sans-serif', "Arial";
+      font-size: 13px;
+    }
+
+    > .header .bar {
+      width: 100%;
+      cursor: default;
+    }
+
+    > .header .controls {
+      right: 0.1px;
+      width: 90px;
+      user-select: none;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    > .header .controls .control-item {
+      text-align: center;
+      width: 30px;
+      left: 5px;
+      margin: 0;
+      font-size: 13px;
+    }
+
+    > .header .controls .control-item .disabled {
+      opacity: 0.4;
+    }
+
+    > .header .controls .control-item:hover:not(.disabled) {
+      cursor: pointer;
+    }
+
+    > .header .controls tl-icon {
+      line-height: 34px;
+      text-align: center;
+    }
+
+    > .header .ui-icon tl-icon {
+      padding: 7px;
+    }
+}
+

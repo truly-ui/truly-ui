@@ -1,0 +1,79 @@
+<div class="ui-autocomplete-box">
+
+  <tl-label *ngIf="label" [required]="required" [labelTitle]="label" [labelPlacement]="labelPlacement" [labelSize]="labelSize"></tl-label>
+  <div [class]="'ui-autocomplete-wrapper ' + color">
+    <div class="ui-wrapper-filter"
+         #wrapper
+         [class.disabled]="disabled || isDisabled"
+         [style.height]="height"
+         [class.opened]="isOpen && positionOverlay !== 'top'"
+         [class.openedAbove]="positionOverlay === 'top' && isOpen">
+      <div *ngIf="loading" class="ui-loading" [style.height]="height">
+        <tl-loader></tl-loader>
+      </div>
+
+      <div *ngIf="selected && !loading" class="ui-close" (click)="onClickClose()" (mouseover)="onHoverClose()" (mouseleave)="onLeaveClose()">
+        <i [class]="!closeHover ? 'ion ion-ios-close-circle-outline' : 'ion ion-ios-close-circle'"></i>
+      </div>
+
+      <tl-input
+        (overlayOrigin)="trigger = $event"
+        [disabled]="disabled || isDisabled"
+        [placeholder]="placeholder"
+        (click)="toggleIsOpen()"
+        (keydown.backspace)="handleKeyBackspace()"
+        (keydown.ArrowUp)="handleKeyArrowUp($event)"
+        (keydown.ArrowDown)="handleKeyArrowDown($event)"
+        (keydown.escape)="handleKeyEscape($event)"
+        class="ui-input"
+        [control]="control"
+        [(ngModel)]="description"
+        (keydown.enter)="handleKeyEnter()"
+        (keydown.shift.tab)="isOpen = false"
+        (keydown.tab)="isOpen = false"
+        (focus)="handleFocus()"
+        (focusout)="focused = false"
+        (input)="onInput()">
+      </tl-input>
+      <input readonly notform class="ui-model-input" [(ngModel)]="value">
+    </div>
+    <tl-filter-container [searchTerm]="description"
+                         [debounceTime]="debounceTime"
+                         [lazyMode]="lazyMode"
+                         [source]="data"
+                         [searchBy]="searchBy"
+                         (filter)="onFilter($event)">
+      <ng-template cdkConnectedOverlay
+                   (backdropClick)="onBackdropClick()"
+                   (positionChange)="onPositionChange($event)"
+                   [cdkConnectedOverlayHasBackdrop]="true"
+                   [cdkConnectedOverlayOrigin]="trigger"
+                   [cdkConnectedOverlayBackdropClass]="'cdk-overlay-transparent-backdrop'"
+                   [cdkConnectedOverlayOpen]="isOpen">
+        <cdk-virtual-scroll-viewport class="ui-scroll-view"
+                                     [itemSize]="rowHeight"
+                                     [style.width]="wrapper.offsetWidth - 2 + 'px'"
+                                     (scrolledIndexChange)="onScrollIndexChange($event)"
+                                     [tlBlockui]="nothingFound"
+                                     [blockuiConfig]="{ 'message': nothingFoundMessage }"
+                                     [class.scrollOpenedAbove]="positionOverlay === 'top' && isOpen"
+                                     [class.scrollOpened]="isOpen && positionOverlay !== 'top'">
+          <div [style.height]="rowHeight + 'px'"
+               [itemSelected]="item"
+               [indexSelected]="i"
+               #select="selectItem"
+               *cdkVirtualFor="let item of dataSource; let i = index"
+               (mousedown)="onSelectItem(item, select)"
+               class="ui-list-item">
+            <span *ngIf="item; else loadingMessage">
+              <span [innerHTML]="getItemText(item) | highlight:description"></span>
+            </span>
+          </div>
+        </cdk-virtual-scroll-viewport>
+      </ng-template>
+      <ng-template #loadingMessage>
+        {{ !nothingFound ? messageLoading : ' ' }}
+      </ng-template>
+    </tl-filter-container>
+  </div>
+</div>
