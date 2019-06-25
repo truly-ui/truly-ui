@@ -10,6 +10,10 @@ import { NgModule } from '@angular/core';
       {
         path: 'button-color-example',
         loadChildren: './button-color-example/button-color-example.module#ButtonColorExampleModule'
+      },
+      {
+        path: 'button-icons-example',
+        loadChildren: './button-icons-example/button-icons-example.module#ButtonIconsExampleModule'
       }
     ])
   ],
