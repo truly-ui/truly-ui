@@ -1,0 +1,29 @@
+{
+  "name": "truly-ui",
+  "title": "Truly-UI",
+  "description": "Web Components for Desktop Applications.",
+  "version": "0.0.0-development",
+  "private": false,
+  "dependencies": {
+    "@angular/animations": "~8.0.2",
+    "@angular/cdk": "^8.0.1",
+    "@angular/common": "~8.0.2",
+    "@angular/compiler": "~8.0.2",
+    "@angular/core": "^8.0.2",
+    "@angular/forms": "^8.0.2",
+    "@angular/http": "^8.0.0-beta.10",
+    "@angular/platform-browser": "^8.0.2",
+    "@angular/platform-browser-dynamic": "^8.0.2",
+    "@angular/router": "^8.0.2",
+    "core-js": "^3.1.4",
+    "object-path": "^0.11.4",
+    "reflect-metadata": "^0.1.12",
+    "rxjs": "^6.5.2",
+    "rxjs-compat": "^6.5.2",
+    "string-format": "^2.0.0",
+    "ts-md5": "^1.2.4",
+    "truly-ui": "^4.1.0",
+    "web-animations-js": "^2.3.1",
+    "zone.js": "~0.9.1"
+  }
+}
