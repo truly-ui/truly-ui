@@ -7,13 +7,18 @@
     "@angular/compiler": "^8.0.0",
     "@angular/core": "^8.0.0",
     "@angular/forms": "^8.0.0",
+    "@angular/animations": "^8.0.2",
     "@angular/platform-browser": "^8.0.0",
     "@angular/platform-browser-dynamic": "^8.0.0",
     "@angular/router": "^8.0.0",
     "core-js": "2.6.9",
     "rxjs": "^6.5.2",
     "truly-ui": "^4.1.0",
-    "zone.js": "^0.9.1"
+    "zone.js": "^0.9.1",
+    "object-path": "^0.11.4",
+    "reflect-metadata": "^0.1.12",
+    "string-format": "^2.0.0",
+    "ts-md5": "^1.2.4"
   },
   "scripts": {
     "ng": "ng",
@@ -26,6 +31,7 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.800.4",
     "@angular/cli": "~8.0.4",
+    "@angular/cdk": "^8.0.1",
     "@angular/compiler-cli": "~8.0.2",
     "@angular/language-service": "~8.0.2",
     "@types/node": "~8.9.4",
@@ -33,10 +39,6 @@
     "@types/jasminewd2": "~2.0.3",
     "codelyzer": "~4.5.0",
     "@types/object-path": "^0.11.0",
-    "object-path": "^0.11.4",
-    "reflect-metadata": "^0.1.12",
-    "string-format": "^2.0.0",
-    "ts-md5": "^1.2.4",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~3.0.0",
