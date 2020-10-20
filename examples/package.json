@@ -9,7 +9,7 @@
     "zone.js": "0.9.1",
     "truly-ui": "4.1.0",
     "@types/node": "8.9.5",
-    "object-path": "0.11.4",
+    "object-path": "0.11.5",
     "@angular/core": "8.0.2",
     "string-format": "2.0.0",
     "@angular/forms": "8.0.2",
